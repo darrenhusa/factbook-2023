@@ -8,7 +8,7 @@
     <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
 </head>
 <body>
-    <h1>2021-2022 CCSJ Factbook</h1>
+    <h1>2023-2024 CCSJ Factbook</h1>
 
     <ul>
         <li><a href="/section01">Section 01 - Enrollment</a></li>
