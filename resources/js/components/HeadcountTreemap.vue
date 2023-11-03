@@ -94,69 +94,71 @@ export default {
             {
                 name: 'Accounting',
                 parent: '1',
-                value: 17
+                value: 10
+            },
+            {
+                name: 'Associates in Science Degree',
+                parent: '1',
+                value: 6
             }, 
             {
                 name: 'Biomedical Science',
                 parent: '1',
-                value: 14
+                value: 7
             }, 
             {
                 name: 'Business Management',
                 parent: '1',
-                value: 109
+                value: 126
             },
             {
                 name: 'Criminal Justice',
                 parent: '1',
-                value: 63
+                value: 50
             },
 
             {
                 name: 'Digital & Studio Arts',
                 parent: '1',
-                value: 47
+                value: 32
             },
             {
                 name: 'Education',
                 parent: '1',
-                value: 23
+                value: 25
             }, 
             {
-                name: 'English',
+                name: 'English & Media Communications',
                 parent: '1',
-                value: 13
+                value: 19
             }, 
-            {
-                name: 'Forensic Biotechnology',
-                parent: '1',
-                value: 3
-            },
+            
             {
                 name: 'Forensic Science',
                 parent: '1',
-                value: 5
+                value: 3
             },
 
             {
                 name: 'General Studies',
                 parent: '1',
-                value: 41
+                value: 24
             },
-            {
-                name: 'Health Science',
-                parent: '1',
-                value: 7
-            }, 
+             
             {
                 name: 'Human Services',
                 parent: '1',
-                value: 9
+                value: 6
+            }, 
+            {
+                name: 'Integrated Studies',
+                parent: '1',
+                value: 1
             }, 
             {
                 name: 'Kinesiology',
                 parent: '1',
-                value: 54
+                value: 69
             },
             {
                 name: 'Life Science',
@@ -166,49 +168,49 @@ export default {
             {
                 name: 'Medical Lab Science',
                 parent: '1',
-                value: 3
-            },
-            {
-                name: 'Not Applicable/Non-Degree-Seeking',
-                parent: '1',
-                value: 1
+                value: 5
             },
             {
                 name: 'Psychology',
                 parent: '1',
-                value: 36
+                value: 47
             },
 
 
             {
-                name: 'BMFT/ORMN',
+                name: 'BMFT',
                 parent: '2',
-                value: 10
+                value: 8
             }, 
             {
-                name: 'Public Safety Management',
+                name: 'Public Safety Management (PSM)',
                 parent: '2',
-                value: 117
+                value: 125
             },
             {
-                name: 'Education',
+                name: 'Education (MAT)',
                 parent: '3',
-                value: 23
+                value: 42
             },
             {
-                name: 'Management',
+                name: 'Management (MSM)',
                 parent: '3',
-                value: 12
+                value: 14
             },
             {
-                name: 'Psychology',
+                name: 'Psychology (MAP)',
                 parent: '3',
-                value: 15
+                value: 8
             },
             {
-                name: 'Public Safety Administration',
+                name: 'Public Administration (MPA)',
                 parent: '3',
-                value: 45
+                value: 13
+            },
+            {
+                name: 'Public Safety Administration (PSA)',
+                parent: '3',
+                value: 37
             },
             ]
         }],

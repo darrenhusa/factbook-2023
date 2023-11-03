@@ -323,12 +323,12 @@ $series1 = [
 @php
     
     $data8 = [
-             ['label' => 'first-time', 'color' => '#217ca3', 'values' => [2, 6, 31, 16, 17, 5, 3, 1, 1, 19, 3, 1, 25, 0, 2, 0, 6]],
-             ['label' => 'continuing', 'color' => '#8d230f', 'values' => [13, 8, 58, 38, 21, 17, 9, 1, 2, 15, 3, 8, 22, 1, 1, 1, 27]],
-             ['label' => 'transfer', 'color' => '#50CB93', 'values' => [2, 0, 20, 9, 9, 1, 1, 1, 2, 7, 1, 0, 7, 0, 0, 0, 3]]
+             ['label' => 'first-time', 'color' => '#217ca3', 'values' => [4, 4, 2, 48, 12, 13, 8, 6, 1, 16, 1, 1, 23, 0, 2, 19]],
+             ['label' => 'continuing', 'color' => '#8d230f', 'values' => [5, 0, 5, 62, 32, 17, 14, 12, 2, 6, 5, 0, 37, 0, 3, 23]],
+             ['label' => 'transfer', 'color' => '#50CB93', 'values' => [1, 2, 0, 16, 6, 2, 3, 1, 0, 2, 0, 0, 9, 1, 0, 5]]
     ];
 
-    $programs8 = ['Acct', 'Biomed', 'Bmt', 'CriJ', 'DSA', 'Educ', 'Emco', 'FrnsBio', 'FrnsSci', 'GenStud', 'HlthSci', 'HSv', 'Kines', 'LifSci', 'MedLabSci', 'NonDegree', 'Psyc'];
+    $programs8 = ['Acct', 'Asd', 'Biomed', 'Bmt', 'CriJ', 'DSA', 'Educ', 'Emco', 'FrnsSci', 'GenStud', 'HSv', 'IntStud', 'Kines', 'LifSci', 'MedLabSci', 'Psyc'];
 
     $series8 = [
         'title' => "Fall 2023 TRAD Enrollment",
@@ -342,7 +342,7 @@ $series1 = [
 
     @endphp
 
-    <h2>Figure 8 - Fall 2022 TRAD Enrolled by Program and by Entry-type (numbers)</h2>
+    <h2>Figure 8 - Fall 2023 TRAD Enrolled by Program and by Entry-type (numbers)</h2>
     <stacked-column-chart2 
         :series='@json($series8)'
         :chart-width="1200"
@@ -360,7 +360,7 @@ $series1 = [
     $programs9 = ['Acct', 'Biomed', 'Bmt', 'CriJ', 'DSA', 'Educ', 'Emco', 'FrnsBio', 'FrnsSci', 'GenStud', 'HlthSci', 'HSv', 'Kines', 'LifSci', 'MedLabSci', 'NonDegree', 'Psyc'];
 
     $series9 = [
-        'title' => "Fall 2022 TRAD Enrollment",
+        'title' => "Fall 2023 TRAD Enrollment",
         'subtitle' => "by Program and by Entry-type",
         'x_axis' => 'Programs',
         'y_axis' => 'Percentages',
@@ -371,7 +371,7 @@ $series1 = [
 
     @endphp
 
-    <h2>Figure 9 - Fall 2022 TRAD Enrolled by Program and by Entry-type (percentage)</h2>
+    <h2>Figure 9 - Fall 2023 TRAD Enrolled by Program and by Entry-type (percentage)</h2>
     <stacked-percentage-column-chart2 
         :series='@json($series9)'
         :chart-width="1200"
@@ -381,12 +381,12 @@ $series1 = [
     @php
     
     $data10 = [
-             ['label' => '', 'color' => '#217ca3', 'values' => [31, 30, 24, 25, 29]],
+             ['label' => '', 'color' => '#217ca3', 'values' => [30, 24, 24, 30, 20]],
     ];
 
     $series10 = [
         'title' => 'TRAD Programs - Part-time Students',
-        'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
+        'categories' => ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023'],
         'y_axis_visible' => false,
         'data' => $data10,
     ];
@@ -402,7 +402,7 @@ $series1 = [
 
 
 
-    <h2>Figure 11 - Fall 2022 Total College Headcount Treemap</h2>
+    <h2>Figure 11 - Fall 2023 Total College Headcount Treemap</h2>
         <headcount-treemap></headcount-treemap>
 
     @php
