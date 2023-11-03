@@ -408,10 +408,9 @@ $series1 = [
     @php
     
     $data12 = [
-             ['label' => 'continuing', 'color' => '#217ca3', 'values' => [224, 226, 263, 241, 245]],
-             ['label' => 'first-time', 'color' => '#8d230f', 'values' => [106, 135, 141, 107, 138]],
-             ['label' => 'returning', 'color' => 'purple', 'values' => [2, 0, 0, 0, 0]],
-             ['label' => 'transfer', 'color' => 'lightblue', 'values' => [52, 53, 29, 48, 63]],
+             ['label' => 'continuing', 'color' => '#217ca3', 'values' => [226, 263, 241, 243, 223]],
+             ['label' => 'first-time', 'color' => '#8d230f', 'values' => [135, 141, 104, 128, 160]],
+             ['label' => 'transfer', 'color' => 'lightblue', 'values' => [53, 29, 50, 68, 48]],
     ];
     $length12 = count($data12);
     $total12 = [];
@@ -436,7 +435,7 @@ $series1 = [
 
     $series12 = [
         'title' => 'TRAD Programs - By Entry Type',
-        'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
+        'categories' => ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023'],
         'data' => $data12,
     ];
 
@@ -475,12 +474,12 @@ $series1 = [
     @php
     
     $data13 = [
-             ['label' => '0', 'color' => '#217ca3', 'values' => [1, 4, 1, 2, 1]],
-             ['label' => '1-15', 'color' => '#8d230f', 'values' => [8, 7, 7, 1, 15]],
-             ['label' => '16-30', 'color' => '#50CB93', 'values' => [10, 7, 9, 8, 9]],
-             ['label' => '31-60', 'color' => 'purple', 'values' => [21, 24, 6, 13, 19]],
-             ['label' => '61-90', 'color' => 'lightblue', 'values' => [11, 9, 6, 17, 14]],
-             ['label' => '91 and above', 'color' => 'orange', 'values' => [1, 2, 0, 7, 5]],
+             ['label' => '0', 'color' => '#217ca3', 'values' => [3, 1, 0, 1, 12]],
+             ['label' => '1-15', 'color' => '#8d230f', 'values' => [7, 7, 4, 17, 8]],
+             ['label' => '16-30', 'color' => '#50CB93', 'values' => [8, 8, 8, 11, 3]],
+             ['label' => '31-60', 'color' => 'purple', 'values' => [24, 7, 14, 20, 13]],
+             ['label' => '61-90', 'color' => 'lightblue', 'values' => [9, 6, 15, 14, 8]],
+             ['label' => '91 and above', 'color' => 'orange', 'values' => [2, 0, 9, 5, 4]],
     ];
 
     $length13 = count($data13);
@@ -521,7 +520,7 @@ $series1 = [
 
     $series13 = [
         'title' => 'TRAD Transfer Students - By Transfer Cr Hrs Earned Ranges',
-        'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
+        'categories' => ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023'],
         'data' => $data13,
     ];
 
@@ -560,10 +559,10 @@ $series1 = [
     @php
     
     $data14 = [
-             ['label' => 'continuing', 'color' => '#217ca3', 'values' => [107, 87, 88, 102, 94]],
-             ['label' => 'first-time', 'color' => '#8d230f', 'values' => [0, 0, 1, 1, 0]],
-             ['label' => 'returning', 'color' => '#50CB93', 'values' => [0, 1, 2, 0, 0]],
-             ['label' => 'transfer', 'color' => 'purple', 'values' => [34, 42, 42, 26, 33]],
+             ['label' => 'continuing', 'color' => '#217ca3', 'values' => [87, 88, 102, 93, 93]],
+             ['label' => 'first-time', 'color' => '#8d230f', 'values' => [0, 1, 0, 0, 8]],
+             ['label' => 'returning', 'color' => '#50CB93', 'values' => [1, 2, 0, 0, 0]],
+             ['label' => 'transfer', 'color' => 'purple', 'values' => [42, 42, 28, 31, 31]],
     ];
 
     $length14 = count($data14);
@@ -602,7 +601,7 @@ $series1 = [
 
     $series14 = [
         'title' => 'DCP Programs - By Entry Type',
-        'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
+        'categories' => ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023'],
         'data' => $data14,
     ];
 
@@ -641,12 +640,12 @@ $series1 = [
         @php
     
     $data15 = [
-             ['label' => '0', 'color' => '#217ca3', 'values' => [0, 0, 0, 0, 0]],
-             ['label' => '1-15', 'color' => '#8d230f', 'values' => [0, 0, 0, 0, 0]],
-             ['label' => '16-30', 'color' => '#50CB93', 'values' => [0, 1, 0, 0, 0]],
-             ['label' => '31-60', 'color' => 'purple', 'values' => [1, 3, 5, 6, 2]],
-             ['label' => '61-90', 'color' => 'lightblue', 'values' => [18, 25, 25, 14, 14]],
-             ['label' => '91 and above', 'color' => 'orange', 'values' => [15, 13, 12, 6, 17]],
+             ['label' => '0', 'color' => '#217ca3', 'values' => [0, 0, 0, 0, 8]],
+             ['label' => '1-15', 'color' => '#8d230f', 'values' => [0, 0, 0, 0, 1]],
+             ['label' => '16-30', 'color' => '#50CB93', 'values' => [1, 0, 0, 0, 2]],
+             ['label' => '31-60', 'color' => 'purple', 'values' => [3, 3, 3, 1, 3]],
+             ['label' => '61-90', 'color' => 'lightblue', 'values' => [25, 23, 17, 13, 9]],
+             ['label' => '91 and above', 'color' => 'orange', 'values' => [13, 16, 8, 17, 8]],
     ];
 
     $length15 = count($data15);
@@ -726,9 +725,9 @@ $series1 = [
     @php
     
     $data16 = [
-             ['label' => 'Catholic', 'color' => '#217ca3', 'values' => [39, 43, 42, 44, 35]],
-             ['label' => 'Non-Catholic', 'color' => '#8d230f', 'values' => [60, 57, 53, 55, 54]],
-             ['label' => 'Unknown', 'color' => '', 'values' => [1, 0, 5, 1, 11]],
+             ['label' => 'Catholic', 'color' => '#217ca3', 'values' => [43, 42, 44, 37, 23]],
+             ['label' => 'Non-Catholic', 'color' => '#8d230f', 'values' => [57, 52, 55, 56, 41]],
+             ['label' => 'Unknown', 'color' => '', 'values' => [0, 6, 1, 8, 36]],
     ];
 
     $series16 = [
@@ -738,7 +737,7 @@ $series1 = [
         'y_axis_visible' => false,
         'y_axis' => 'Percentage (%)',
         'y_axis_max' => 100,
-        'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
+        'categories' => ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023'],
         'data' => $data16,
     ];
 
@@ -760,11 +759,11 @@ $series1 = [
     @php
     
     $data17 = [
-             ['label' => 'Black or African American', 'color' => '#217ca3', 'values' => [50, 35, 60, 145]],
-             ['label' => 'Hispanics of any race', 'color' => '#8d230f', 'values' => [43, 11, 96, 150]],
-             ['label' => 'Other', 'color' => '#50CB93', 'values' => [8, 2, 8, 18]],
-             ['label' => 'White', 'color' => 'purple', 'values' => [29, 12, 62, 103]],
-             ['label' => 'Unknown', 'color' => '', 'values' => [4, 3, 0, 7]],
+             ['label' => 'Black or African American', 'color' => '#217ca3', 'values' => [63, 18, 59, 140]],
+             ['label' => 'Hispanics of any race', 'color' => '#8d230f', 'values' => [44, 13, 77, 134]],
+             ['label' => 'Other', 'color' => '#50CB93', 'values' => [18, 8, 17, 43]],
+             ['label' => 'White', 'color' => 'purple', 'values' => [29, 9, 58, 96]],
+             ['label' => 'Unknown', 'color' => '', 'values' => [4, 0, 0, 4]],
     ];
 
     $length17 = count($data17);
@@ -790,14 +789,14 @@ $series1 = [
 
     $series17 = [
         'title' => 'Demographic Distribution',
-        'subtitle' => '(Fall 2022 Full-time Undergraduates)',
+        'subtitle' => '(Fall 2023 Full-time Undergraduates)',
         'categories' => ['First-time Students', 'Transfer Students', 'Continuing Students', 'All FT Undergrads'],
         'data' => $data17,
     ];
 
     @endphp
 
-    <h2>Figure 17 - Demographic Distribution (in %) - Fall 2022 Full-time Undergraduates</h2>
+    <h2>Figure 17 - Demographic Distribution (in %) - Fall 2023 Full-time Undergraduates</h2>
     <stacked-column-with-data-label-percents-chart 
         :series='@json($series17)'
         :chart-width="1200"
@@ -830,11 +829,11 @@ $series1 = [
         @php
     
     $data18 = [
-             ['label' => 'Black or African American', 'color' => '#217ca3', 'values' => [1, 6, 15, 22]],
-             ['label' => 'Hispanics of any race', 'color' => '#8d230f', 'values' => [0, 11, 43, 54]],
-             ['label' => 'Other', 'color' => '#50CB93', 'values' => [0, 2, 5, 7]],
-             ['label' => 'White', 'color' => 'purple', 'values' => [2, 10, 49, 61]],
-             ['label' => 'Unknown', 'color' => '', 'values' => [1, 4, 1, 6]],
+             ['label' => 'Black or African American', 'color' => '#217ca3', 'values' => [4, 4, 17, 25]],
+             ['label' => 'Hispanics of any race', 'color' => '#8d230f', 'values' => [1, 8, 42, 51]],
+             ['label' => 'Other', 'color' => '#50CB93', 'values' => [0, 1, 6, 7]],
+             ['label' => 'White', 'color' => 'purple', 'values' => [4, 14, 34, 52]],
+             ['label' => 'Unknown', 'color' => '', 'values' => [1, 5, 6, 12]],
     ];
 
     $length18 = count($data18);
@@ -860,14 +859,14 @@ $series1 = [
 
     $series18 = [
         'title' => 'Demographic Distribution',
-        'subtitle' => '(Fall 2022 Part-time Undergraduates)',
-        'categories' => ['First-time Students', 'Transfer Students', 'Continuing Students', 'All FT Undergrads'],
+        'subtitle' => '(Fall 2023 Part-time Undergraduates)',
+        'categories' => ['First-time Students', 'Transfer Students', 'Continuing Students', 'All PT Undergrads'],
         'data' => $data18,
     ];
 
     @endphp
 
-    <h2>Figure 18 - Demographic Distribution (in %) - Fall 2022 Part-time Undergraduates</h2>
+    <h2>Figure 18 - Demographic Distribution (in %) - Fall 2023 Part-time Undergraduates</h2>
     <stacked-column-with-data-label-percents-chart 
         :series='@json($series18)'
         :chart-width="1200"
@@ -900,9 +899,9 @@ $series1 = [
         @php
     
     $data19 = [
-             ['label' => 'Is First-Generation', 'color' => '#217ca3', 'values' => [31, 43, 53, 30, 43]],
-             ['label' => 'Is Not First-Generation', 'color' => '#8d230f', 'values' => [73, 82, 73, 66, 84]],
-             ['label' => 'Unknown', 'color' => '#50CB93', 'values' => [0, 7, 7, 7, 4]],
+             ['label' => 'Is First-Generation', 'color' => '#217ca3', 'values' => [42, 53, 28, 43, 49]],
+             ['label' => 'Is Not First-Generation', 'color' => '#8d230f', 'values' => [83, 73, 67, 76, 96]],
+             ['label' => 'Unknown', 'color' => '#50CB93', 'values' => [7, 7, 6, 4, 10]],
     ];
 
     $length19 = count($data19);
@@ -941,7 +940,7 @@ $series1 = [
     $series19 = [
         'title' => 'First-Generation Students',
         'subtitle' => 'of the First-time, Full-time, Freshman',
-        'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
+        'categories' => ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023'],
         'data' => $data19,
     ];
 
