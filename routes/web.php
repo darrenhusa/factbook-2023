@@ -39,7 +39,7 @@ Route::get('/table-04', function () {
     return view('table-04');
 });
 
-Route::get('/section01', function () {
+Route::get('/section01-enrollment', function () {
     return view('section01-enrollment');
 });
 

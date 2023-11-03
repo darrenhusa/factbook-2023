@@ -11,7 +11,7 @@
     <h1>2023-2024 CCSJ Factbook</h1>
 
     <ul>
-        <li><a href="/section01">Section 01 - Enrollment</a></li>
+        <li><a href="/section01-enrollment">Section 01 - Enrollment</a></li>
         <li><a href="/section01-practice">Section 01 Practice - Has Calculated Percentages in HTML table example</a></li>
         <ul>
             <li><a href="/table-01">Table 01 - Total College</a></li>
