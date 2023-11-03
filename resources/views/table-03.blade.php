@@ -45,25 +45,23 @@ thead th {
 @php
   
   $data = [
-    ["Accounting", [1, 2, 0, 0, 1]],
-    ["Biomedical Science", [0, 0, 2, 1, 0]],
-    ["Business Management", [1, 5, 3, 0, 3]],
-    ["Criminal Justice", [3, 2, 3, 5, 5]],
-    ["Digital & Studio Arts", [2, 0, 2, 4, 4]],
-    ["Elementary Education", [2, 2, 3, 1, 3]],
-    ["English & Media Communications", [1, 3, 1, 1, 0]],
-    ["Forensic Biotechnology (*)", [1, 1, 1, 0, 0]],
-    ["General Studies", [4, 7, 4, 4, 9]],
-    ["Health Science", [0, 0, 1, 2, 1]],
-    ["Human Services", [4, 2, 1, 3, 0]],
-    ["Integrated Studies", [3, 3, 0, 0, 0]],
-    ["Kinesiology", [0, 0, 1, 2, 1]],
-    ["Legal/Paralegal Studies (*)", [3, 0, 0, 0, 0]],
-    ["Not Applicable/Non-Degree-Seeking", [3, 1, 0, 1, 1]],
-    ["Psychology", [1, 2, 2, 1, 1]],
-    ["(*) Public Safety Management", [1, 0, 0, 0, 0]],
-    ["Theology/Religious Studies (*)", [1, 0, 0, 0, 0]],
-    ["Grand Total", [31, 30, 24, 25, 29]],
+    ["Accounting", [2, 0, 0, 1, 0]],
+    ["Biomedical Science", [0, 2, 1, 1, 0]],
+    ["Business Management", [5, 3, 0, 3, 6]],
+    ["Criminal Justice", [2, 3, 5, 6, 3]],
+    ["Digital & Studio Arts", [0, 2, 4, 4, 1]],
+    ["Elementary Education", [2, 3, 1, 3, 3]],
+    ["English & Media Communications", [3, 1, 1, 0, 0]],
+    ["Forensic Biotechnology (*)", [1, 1, 0, 0, 0]],
+    ["Forensic Science", [0, 0, 0, 1, 0]],
+    ["General Studies", [7, 4, 3, 6, 2]],
+    ["Health Science (*)", [0, 1, 2, 1, 0]],
+    ["Human Services", [2, 1, 3, 1, 1]],
+    ["Integrated Studies", [3, 0, 0, 0, 0]],
+    ["Kinesiology", [0, 1, 2, 1, 2]],
+    ["Not Applicable/Non-Degree-Seeking", [1, 0, 1, 1, 0]],
+    ["Psychology", [2, 2, 1, 1, 1]],
+    ["Grand Total", [30, 24, 24, 30, 20]],
   ];
 
   foreach ($data as $val)
@@ -83,11 +81,11 @@ thead th {
     <thead>
         <tr>
             <th></th>
-            <th>Fall 2018</th>
             <th>Fall 2019</th>
             <th>Fall 2020</th>
             <th>Fall 2021</th>
             <th>Fall 2022</th>
+            <th>Fall 2023</th>
             <th>Sparklines</th>
         </tr>
     </thead>

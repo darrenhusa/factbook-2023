@@ -45,26 +45,27 @@ thead th {
 @php
   
   $data = [
-    ["Accounting", [19, 12, 14, 16, 16]],
-    ["Biomedical Science", [25, 20, 30, 22, 14]],
-    ["Business Management", [72, 73, 92, 98, 106]],
-    ["Computer Information Systems (*)", [2, 2, 0, 0, 0]],
-    ["Criminal Justice", [71, 80, 72, 53, 58]],
-    ["Digital & Studio Arts", [14, 14, 19, 21, 43]],
-    ["Elementary Education", [28, 45, 36, 20, 20]],
-    ["English & Media Communications", [15, 20, 16, 12, 13]],
-    ["Forensic Biotechnology (*)", [5, 2, 2, 1, 3]],
-    ["Forensic Science", [0, 5, 8, 4, 5]],
-    ["General Studies", [46, 41, 32, 36, 32]],
-    ["Health Science", [0, 0, 6, 6, 6]],
-    ["Human Services", [12, 19, 21, 16, 9]],
-    ["Integrated Studies", [2, 1, 0, 0, 0]],
-    ["Kinesiology", [19, 17, 30, 29, 53]],
-    ["Legal/Paralegal Studies (*)", [2, 2, 0, 0, 0]],
-    ["Life Science", [0, 0, 0, 1, 1]],
-    ["Medical Lab Science", [0, 0, 1, 1, 3]],
-    ["Psychology", [21, 31, 30, 35, 35]],
-    ["Grand Total", [353, 384, 409, 371, 417]],
+    ["Accounting", [12, 14, 16, 14, 10]],
+    ["Associates in Science Degree", [0, 0, 0, 0, 5]],
+    ["Biomedical Science", [20, 30, 22, 12, 7]],
+    ["Business Management", [73, 92, 98, 106, 120]],
+    ["Computer Information Systems (*)", [2, 0, 0, 0, 0]],
+    ["Criminal Justice", [80, 72, 53, 56, 47]],
+    ["Digital & Studio Arts", [14, 19, 21, 43, 31]],
+    ["Elementary Education", [45, 36, 20, 20, 22]],
+    ["English & Media Communications", [20, 16, 12, 12, 19]],
+    ["Forensic Biotechnology (*)", [2, 2, 1, 2, 0]],
+    ["Forensic Science", [5, 8, 4, 5, 3]],
+    ["General Studies", [41, 32, 36, 31, 22]],
+    ["Health Science (*)", [0, 6, 6, 6, 0]],
+    ["Human Services", [19, 21, 16, 10, 5]],
+    ["Integrated Studies", [1, 0, 0, 0, 1]],
+    ["Kinesiology", [17, 30, 29, 54, 67]],
+    ["Legal/Paralegal Studies (*)", [2, 0, 0, 0, 0]],
+    ["Life Science", [0, 0, 1, 1, 1]],
+    ["Medical Lab Science", [0, 1, 1, 3, 5]],
+    ["Psychology", [31, 30, 35, 34, 46]],
+    ["Grand Total", [384, 409, 371, 409, 411]],
   ];
 
   foreach ($data as $val)
@@ -84,11 +85,11 @@ thead th {
     <thead>
         <tr>
             <th></th>
-            <th>Fall 2018</th>
             <th>Fall 2019</th>
             <th>Fall 2020</th>
             <th>Fall 2021</th>
             <th>Fall 2022</th>
+            <th>Fall 2023</th>
             <th>Sparklines</th>
         </tr>
     </thead>

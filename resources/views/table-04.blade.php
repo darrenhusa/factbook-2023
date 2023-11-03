@@ -45,11 +45,12 @@ thead th {
 @php
   
   $data = [
-    ["Management (MSM)", [15, 11, 11, 12, 12]],
-    ["Teaching (MAT)", [59, 61, 45, 14, 23]],
-    ["Psychology (MAP)", [22, 13, 14, 16, 15]],
-    ["Public Safety Administration (PSA)", [94, 84, 69, 66, 45]],
-    ["Grand Total", [190, 169, 139, 108, 95]],
+    ["Management (MSM)", [11, 11, 12, 12, 14]],
+    ["Teaching (MAT)", [61, 45, 14, 23, 42]],
+    ["Psychology (MAP)", [13, 14, 16, 15, 8]],
+    ["Public Administration (MPA)", [0, 0, 0, 0, 13]],
+    ["Public Safety Administration (PSA)", [84, 69, 66, 45, 37]],
+    ["Grand Total", [169, 139, 108, 95, 114]],
   ];
 
   foreach ($data as $val)
@@ -69,11 +70,11 @@ thead th {
     <thead>
         <tr>
             <th></th>
-            <th>Fall 2018</th>
             <th>Fall 2019</th>
             <th>Fall 2020</th>
             <th>Fall 2021</th>
             <th>Fall 2022</th>
+            <th>Fall 2023</th>
             <th>Sparklines</th>
         </tr>
     </thead>
