@@ -81,6 +81,9 @@ $series20 = [
     
     <h2>Figure 21 - 5-Year Average Retention Rates with Retention Goals</h2>
     <combo-chart
+        :column_categories="['F1 to F2', 'F1 to SO', 'SO to JR', 'JR to SR']"
+        :column_data="[74.2, 47.6, 72.0, 80.0]"
+        :retention_goals="[85.0, 65.0, 80.0, 80.0]"
         :chart-width="1200"
         :chart-height="600">
     </combo-chart>

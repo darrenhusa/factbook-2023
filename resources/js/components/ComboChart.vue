@@ -16,6 +16,19 @@ export default {
         type: Object,
         required: true
       },
+      column_data : {
+        type: Array,
+        required: true
+      },
+      column_categories : {
+        type: Array,
+        required: true
+      },
+      retention_goals : {
+        type: Array,
+        required: true
+      },
+      
       chartWidth: {
         type: Number,
         default: 300
@@ -81,7 +94,7 @@ export default {
                     text: '(Full-time Traditional)'
             },
             xAxis: {
-                categories: ['F1 to F2', 'F1 to SO', 'SO to JR', 'JR to SR'],
+                categories: this.column_categories,
                 // labels: {
                     // rotation: -45,
                     // align: 'right',
@@ -111,7 +124,7 @@ export default {
             series: [{
                 type: 'column',
                 // name: 'results',
-                data: [78.4, 51.0, 69.8, 80.0],
+                data: this.column_data,
                 dataLabels: {
                     enabled: true,
                     inside: true,
@@ -129,7 +142,7 @@ export default {
               },
                 {
                 type: 'scatter',
-                data: [85.0, 65.0, 80.0, 80.0],
+                data: this.retention_goals,
                 dataLabels: {
                     enabled: true,
                     // color: 'red',

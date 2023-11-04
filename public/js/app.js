@@ -2748,6 +2748,14 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
       type: Object,
       required: true
     },
+    column_data: {
+      type: Array,
+      required: true
+    },
+    column_categories: {
+      type: Array,
+      required: true
+    },
     chartWidth: {
       type: Number,
       "default": 300
@@ -2807,7 +2815,7 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
         text: '(Full-time Traditional)'
       },
       xAxis: {
-        categories: ['F1 to F2', 'F1 to SO', 'SO to JR', 'JR to SR'] // labels: {
+        categories: this.column_categories // labels: {
         // rotation: -45,
         // align: 'right',
         // style: {
@@ -2837,7 +2845,7 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
       series: [{
         type: 'column',
         // name: 'results',
-        data: [78.4, 51.0, 69.8, 80.0],
+        data: this.column_data,
         dataLabels: {
           enabled: true,
           inside: true,
