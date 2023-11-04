@@ -16,10 +16,10 @@
 // for figure 20   
 // colors taken from Excel chart via rgb lookup.
 // colors converted to hex using https://www.rgbtohex.net/
-$data20 = [['label' => 'F1 to F2', 'color' => '#4f81bd', 'showDataLabels' => false,  'values' => [88.0, 73.7, 75.7, 68.5, 86.2]],
-         ['label' => 'F1 to SO', 'color' => '#be4a48', 'showDataLabels' => false, 'values' => [54.0, 45.8, 56.3, 41.8, 56.9]],
-         ['label' => 'SO to JR', 'color' => '#92d050',  'showDataLabels' => false, 'values' => [61.0, 77.2, 72.1, 75.3, 63.3]],
-         ['label' => 'JR to SR', 'color' => '#7030a0', 'showDataLabels' => false, 'values' => [75.0, 76.8, 84.0, 80.0, 83.8]],
+$data20 = [['label' => 'F1 to F2', 'color' => '#4f81bd', 'showDataLabels' => false,  'values' => [73.7, 75.7, 68.5, 86.2, 67.1]],
+         ['label' => 'F1 to SO', 'color' => '#be4a48', 'showDataLabels' => false, 'values' => [45.8, 56.2, 41.8, 56.9, 37.1]],
+         ['label' => 'SO to JR', 'color' => '#92d050',  'showDataLabels' => false, 'values' => [77.2, 72.1, 75.3, 63.3, 72.3]],
+         ['label' => 'JR to SR', 'color' => '#7030a0', 'showDataLabels' => false, 'values' => [76.8, 84.0, 80.0, 83.5, 75.3]],
 ];
 
     $length20 = count($data20);
@@ -32,10 +32,10 @@ $data20 = [['label' => 'F1 to F2', 'color' => '#4f81bd', 'showDataLabels' => fal
     $so_jr_avg = array_sum($data20[2]['values'])/5.0;
     $jr_sr_avg = array_sum($data20[3]['values'])/5.0;
 
-    echo $f1_f2_avg . "\n";
-    echo $f1_so_avg . "\n";
-    echo $so_jr_avg . "\n";
-    echo $jr_sr_avg . "\n";
+    echo "F1-F2 Average = " . $f1_f2_avg . "\n";
+    echo "F1-SO Average = " . $f1_so_avg . "\n";
+    echo "SO-JR Average = " . $so_jr_avg . "\n";
+    echo "JR-SR Average = " . $jr_sr_avg . "\n";
 
 $series20 = [
     'title' => 'Retention Rates',
@@ -43,7 +43,7 @@ $series20 = [
     'y_axis_min' => 40,
     'y_axis_max' => 100,
     'y_axis_tickinterval' => 10,
-    'categories' => ['Fall 2017', 'Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021'],
+    'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
     'data' => $data20,
 ];
 @endphp
@@ -88,8 +88,8 @@ $series20 = [
 @php
     
     $data29 = [
-             ['label' => 'Full-time', 'color' => '#217ca3', 'values' => [88.4, 75.7, 75.8, 70.2, 90.2]],
-             ['label' => 'Part-time', 'color' => '#8d230f', 'values' => [50.0, 0.0, 66.7, 12.5, 33.3]],
+             ['label' => 'Full-time', 'color' => '#217ca3', 'values' => [75.7, 75.8, 70.2, 89.1, 66.7]],
+             ['label' => 'Part-time', 'color' => '#8d230f', 'values' => [0.0, 66.7, 12.5, 33.3, 20.0]],
     ];
 
     $series29 = [
@@ -97,8 +97,8 @@ $series20 = [
         'subtitle' => "Retention of First-time, First-semester TRAD Freshman (F1)",
         'x_axis' => '',
         'y_axis' => 'Percentage (%)',
-        'categories' => ['Fall 2017-Spring 2018', 'Fall 2018-Spring 2019', 
-                         'Fall 2019-Spring 2020', 'Fall 2020-Spring 2021', 'Fall 2021-Spring 2022'],
+        'categories' => ['Fall 2018-Spring 2019', 'Fall 2019-Spring 2020', 'Fall 2020-Spring 2021', 
+                         'Fall 2021-Spring 2022', 'Fall 2022-Spring 2023'],
         'data' => $data29,
     ];
 
@@ -121,8 +121,8 @@ $series20 = [
     @php
     
     $data30 = [
-             ['label' => 'Full-time', 'color' => '#217ca3', 'values' => [53.7, 48.5, 57.6, 42.7, 58.8]],
-             ['label' => 'Part-time', 'color' => '#8d230f', 'values' => [0.0, 0.0, 0.0, 25.0, 33.3]],
+             ['label' => 'Full-time', 'color' => '#217ca3', 'values' => [48.5, 57.6, 42.7, 59.4, 35.8]],
+             ['label' => 'Part-time', 'color' => '#8d230f', 'values' => [0.0, 0.0, 25.0, 33.3, 0.0]],
     ];
 
     $series30 = [
@@ -131,8 +131,8 @@ $series20 = [
         'x_axis' => '',
         'y_axis' => 'Percentage (%)',
         'y_axis_max' => 100,
-        'categories' => ['Fall 2017-Fall 2018', 'Fall 2018-Fall 2019', 
-                         'Fall 2019-Fall 2020', 'Fall 2020-Fall 2021', 'Fall 2021-Fall 2022'],
+        'categories' => ['Fall 2018-Fall 2019', 'Fall 2019-Fall 2020', 
+                         'Fall 2020-Fall 2021', 'Fall 2021-Fall 2022', 'Fall 2022-Fall 2023'],
         'data' => $data30,
     ];
 
