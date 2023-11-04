@@ -47,8 +47,8 @@ $series1 = [
         @php
     
     $data3 = [
-             ['label' => 'Athlete', 'color' => '#217ca3', 'values' => [271, 268, 225, 216, 414]],
-             ['label' => 'NonAthlete', 'color' => '#8d230f', 'values' => [640, 883, 1304, 352, 680]]
+             ['label' => 'Athlete', 'color' => '#217ca3', 'values' => [268, 220, 217, 417, 529]],
+             ['label' => 'NonAthlete', 'color' => '#8d230f', 'values' => [883, 1297, 353, 670, 895]]
     ];
     $length3 = count($data3);
     $total3 = [];
@@ -63,7 +63,7 @@ $series1 = [
 
    $series3 = [
         'title' => 'Number of Submitted Applications - TRAD Programs',
-        'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
+        'categories' => ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023'],
         'data' => $data3,
     ];
 
@@ -102,8 +102,8 @@ $series1 = [
     @php
     
     $data4 = [
-             ['label' => 'Athlete', 'color' => '#217ca3', 'values' => [147, 205, 171, 175, 319]],
-             ['label' => 'NonAthlete', 'color' => '#8d230f', 'values' => [208, 395, 687, 160, 266]]
+             ['label' => 'Athlete', 'color' => '#217ca3', 'values' => [205, 165, 171, 320, 394]],
+             ['label' => 'NonAthlete', 'color' => '#8d230f', 'values' => [395, 682, 158, 261, 420]]
     ];
     $length4 = count($data4);
 
@@ -117,7 +117,7 @@ $series1 = [
 
     $series4 = [
         'title' => 'Number of Accepted - TRAD Programs',
-        'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
+        'categories' => ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023'],
         'data' => $data4,
     ];
 
@@ -157,8 +157,8 @@ $series1 = [
     @php
     
     $data5 = [
-             ['label' => 'Athlete', 'color' => '#217ca3', 'values' => [119, 132, 129, 139, 239]],
-             ['label' => 'NonAthlete', 'color' => '#8d230f', 'values' => [100, 158, 281, 90, 90]]
+             ['label' => 'Athlete', 'color' => '#217ca3', 'values' => [132, 124, 135, 242, 241]],
+             ['label' => 'NonAthlete', 'color' => '#8d230f', 'values' => [158, 278, 87, 87, 132]]
     ];
 
     $length5 = count($data5);
@@ -173,7 +173,7 @@ $series1 = [
 
     $series5 = [
         'title' => 'Number of Admitted (Final Accepted) - TRAD Programs',
-        'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
+        'categories' => ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023'],
         'data' => $data5,
     ];
 
@@ -212,8 +212,8 @@ $series1 = [
     @php
     
     $data6 = [
-             ['label' => 'Athlete', 'color' => '#217ca3', 'values' => [110, 113, 101, 119, 175]],
-             ['label' => 'NonAthlete', 'color' => '#8d230f', 'values' => [78, 125, 111, 62, 62]]
+             ['label' => 'Athlete', 'color' => '#217ca3', 'values' => [113, 96, 115, 181, 184]],
+             ['label' => 'NonAthlete', 'color' => '#8d230f', 'values' => [125, 107, 60, 60, 65]]
     ];
 
     $length6 = count($data6);
@@ -228,7 +228,7 @@ $series1 = [
 
     $series6 = [
         'title' => 'Number of Registered - TRAD Programs',
-        'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
+        'categories' => ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023'],
         'data' => $data6,
     ];
 
@@ -267,8 +267,8 @@ $series1 = [
     @php
     
     $data7 = [
-             ['label' => 'Athlete', 'color' => '#217ca3', 'values' => [103, 107, 95, 116, 149]],
-             ['label' => 'NonAthlete', 'color' => '#8d230f', 'values' => [63, 90, 70, 52, 53]]
+             ['label' => 'Athlete', 'color' => '#217ca3', 'values' => [107, 90, 112, 156, 159]],
+             ['label' => 'NonAthlete', 'color' => '#8d230f', 'values' => [90, 67, 51, 51, 47]]
     ];
 
     $length7 = count($data7);
@@ -283,7 +283,7 @@ $series1 = [
 
     $series7 = [
         'title' => 'Number of Enrolled - TRAD Programs',
-        'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
+        'categories' => ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023'],
         'data' => $data7,
     ];
 
