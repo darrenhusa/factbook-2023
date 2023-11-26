@@ -40,7 +40,7 @@ $data20 = [['label' => 'F1 to F2', 'color' => '#4f81bd', 'showDataLabels' => fal
 $series20 = [
     'title' => 'Retention Rates',
     'subtitle' => '(Full-time Traditional)',
-    'y_axis_min' => 40,
+    'y_axis_min' => 0,
     'y_axis_max' => 100,
     'y_axis_tickinterval' => 10,
     'categories' => ['Fall 2018', 'Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022'],
