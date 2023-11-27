@@ -46,10 +46,10 @@ thead th {
   
   $data = [
     ["Management (MSM)", [11, 11, 12, 12, 14]],
-    ["Teaching (MAT)", [61, 45, 14, 23, 42]],
     ["Psychology (MAP)", [13, 14, 16, 15, 8]],
     ["Public Administration (MPA)", [0, 0, 0, 0, 13]],
     ["Public Safety Administration (PSA)", [84, 69, 66, 45, 37]],
+    ["Teaching (MAT)", [61, 45, 14, 23, 42]],
     ["Grand Total", [169, 139, 108, 95, 114]],
   ];
 
