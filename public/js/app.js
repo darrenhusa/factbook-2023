@@ -2756,6 +2756,10 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
       type: Array,
       required: true
     },
+    retention_goals: {
+      type: Array,
+      required: true
+    },
     chartWidth: {
       type: Number,
       "default": 300
@@ -2862,7 +2866,7 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
         }
       }, {
         type: 'scatter',
-        data: [85.0, 65.0, 80.0, 80.0],
+        data: this.retention_goals,
         dataLabels: {
           enabled: true // color: 'red',
           // inside: true,
