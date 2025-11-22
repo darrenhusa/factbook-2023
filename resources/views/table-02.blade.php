@@ -45,30 +45,55 @@ thead th {
 @php
   
   $data = [
-    ["Accounting", [12, 14, 16, 14, 10]],
-    ["Associates in Science Degree", [0, 0, 0, 0, 5]],
-    ["Biomedical Science", [20, 30, 22, 12, 7]],
-    ["Business Management", [73, 92, 98, 106, 120]],
-    ["Computer Information Systems (*)", [2, 0, 0, 0, 0]],
-    ["Criminal Justice", [80, 72, 53, 56, 47]],
-    ["Digital & Studio Arts", [14, 19, 21, 43, 31]],
-    ["Elementary Education", [45, 36, 20, 20, 22]],
-    ["English & Media Communications", [20, 16, 12, 12, 19]],
-    ["Forensic Biotechnology (*)", [2, 2, 1, 2, 0]],
-    ["Forensic Science", [5, 8, 4, 5, 3]],
-    ["General Studies", [41, 32, 36, 31, 22]],
-    ["Health Science (*)", [0, 6, 6, 6, 0]],
-    ["Human Services", [19, 21, 16, 10, 5]],
-    ["Integrated Studies", [1, 0, 0, 0, 1]],
-    ["Kinesiology", [17, 30, 29, 54, 67]],
-    ["Legal/Paralegal Studies (*)", [2, 0, 0, 0, 0]],
-    ["Life Science", [0, 0, 1, 1, 1]],
-    ["Medical Lab Science", [0, 1, 1, 3, 5]],
-    ["Psychology", [31, 30, 35, 34, 46]],
-    ["Grand Total", [384, 409, 371, 409, 411]],
+    ["Accounting", [16, 14, 10, 12, 15]],
+    ["Associates in Science Degree", [0, 0, 5, 1, 0]],
+    ["Biomedical Science", [22, 12, 7, 4, 9]],
+    ["Business Management", [98, 106, 119, 104, 123]],
+    ["Criminal Justice", [53, 56, 47, 38, 49]],
+    ["Digital & Studio Arts", [21, 43, 31, 27, 25]],
+    ["Elementary Education", [20, 20, 22, 25, 31]],
+    ["English & Media Communications", [12, 12, 19, 13, 15]],
+    ["Forensic Biotechnology (*)", [1, 2, 0, 0, 0]],
+    ["Forensic Science", [4, 5, 3, 6, 10]],
+    ["General Studies", [36, 31, 23, 42, 27]],
+    ["Health Science (*)", [6, 6, 0, 0, 0]],
+    ["Human Services", [16, 10, 6, 4, 1]],
+    ["Integrated Studies", [0, 0, 1, 1, 0]],
+    ["Kinesiology", [29, 54, 67, 49, 56]],
+    ["Life Science", [1, 1, 1, 1, 5]],
+    ["Medical Lab Science", [1, 3, 4, 2, 3]],
+    ["Neuroscience", [0, 0, 0, 2, 2]],
+    ["Psychology", [35, 34, 47, 26, 11]],
+    ["Psychology and Human Services", [0, 0, 0, 15, 37]],
+    ["Public Health Management", [0, 0, 0, 4, 1]],
   ];
 
-  foreach ($data as $val)
+  // Initialize an array to store the column totals
+  $columnTotals = [];
+
+  // Iterate through the main data array
+  foreach ($data as $row) {
+    // The numbers array is the second element in each row (index 1)
+    $nums = $row[1];
+
+    // Iterate through the numbers array to sum the columns
+    foreach ($nums as $columnKey => $value) {
+        // If the column key doesn't exist in $columnTotals yet, initialize it to 0
+        if (!isset($columnTotals[$columnKey])) {
+            $columnTotals[$columnKey] = 0;
+        }
+        // Add the current value to the appropriate column total
+        $columnTotals[$columnKey] += $value;
+    }
+  }
+
+  // Optional: Display the results
+  echo "Column Totals:\n";
+  print_r($columnTotals);
+
+  array_push($data, ["Grand Total", [$columnTotals[0], $columnTotals[1], $columnTotals[2], $columnTotals[3], $columnTotals[4]]]);
+
+    foreach ($data as $val)
    {
        $programs[] = $val[0];
        $numbers[] = $val[1];
@@ -85,11 +110,11 @@ thead th {
     <thead>
         <tr>
             <th></th>
-            <th>Fall 2019</th>
-            <th>Fall 2020</th>
             <th>Fall 2021</th>
             <th>Fall 2022</th>
             <th>Fall 2023</th>
+            <th>Fall 2024</th>
+            <th>Fall 2025</th>            
             <th>Sparklines</th>
         </tr>
     </thead>

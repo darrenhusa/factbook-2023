@@ -45,13 +45,39 @@ thead th {
 @php
   
   $data = [
-    ["Management (MSM)", [11, 11, 12, 12, 14]],
-    ["Psychology (MAP)", [13, 14, 16, 15, 8]],
-    ["Public Administration (MPA)", [0, 0, 0, 0, 13]],
-    ["Public Safety Administration (PSA)", [84, 69, 66, 45, 37]],
-    ["Teaching (MAT)", [61, 45, 14, 23, 42]],
-    ["Grand Total", [169, 139, 108, 95, 114]],
+    ["Exercise & Sport Science", [0, 0, 0, 0, 6]],
+    ["Management (MSM)", [12, 12, 14, 14, 11]],
+    ["Psychology (MAP)", [16, 15, 8, 6, 8]],
+    ["Public Administration (MPA)", [0, 0, 22, 68, 71]],
+    ["Public Safety Administration (PSA)", [66, 45, 28, 1, 0]],
+    ["Teaching (MAT)", [14, 23, 42, 39, 26]]
   ];
+
+  // Initialize an array to store the column totals
+  $columnTotals = [];
+
+  // Iterate through the main data array
+  foreach ($data as $row) {
+    // The numbers array is the second element in each row (index 1)
+    $nums = $row[1];
+
+    // Iterate through the numbers array to sum the columns
+    foreach ($nums as $columnKey => $value) {
+        // If the column key doesn't exist in $columnTotals yet, initialize it to 0
+        if (!isset($columnTotals[$columnKey])) {
+            $columnTotals[$columnKey] = 0;
+        }
+        // Add the current value to the appropriate column total
+        $columnTotals[$columnKey] += $value;
+    }
+  }
+
+  // Optional: Display the results
+  echo "Column Totals:\n";
+  print_r($columnTotals);
+
+  array_push($data, ["Grand Total", [$columnTotals[0], $columnTotals[1], $columnTotals[2], $columnTotals[3], $columnTotals[4]]]);
+
 
   foreach ($data as $val)
    {

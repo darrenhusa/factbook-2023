@@ -25,10 +25,8 @@
                 <li><a href="/sankey-dept1"> Sankey Charts - Retention by Academic Department</a></li>
                 <li><a href="/sankey-demo"> Highcharts Sankey Demo</a></li>
             </ul>
-        <li><a href="/section03">Section 03 - Student Learning</a></li>
-        <li><a href="#"></a>Section 04 - Graduation Rates</li>
-        <li><a href="#"></a>Section 05 - Job Placement</li>
-        <li><a href="/section06">Section 06 - Profitability</a></li>
+        <li><a href="/section03">High School GPAs</a></li>
+        <li><a href="#"></a>Graduation Rates</li>
     </ul>
     
 

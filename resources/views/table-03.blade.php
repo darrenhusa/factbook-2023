@@ -45,24 +45,48 @@ thead th {
 @php
   
   $data = [
-    ["Accounting", [2, 0, 0, 1, 0]],
-    ["Biomedical Science", [0, 2, 1, 1, 0]],
-    ["Business Management", [5, 3, 0, 3, 6]],
-    ["Criminal Justice", [2, 3, 5, 6, 3]],
-    ["Digital & Studio Arts", [0, 2, 4, 4, 1]],
-    ["Elementary Education", [2, 3, 1, 3, 3]],
-    ["English & Media Communications", [3, 1, 1, 0, 0]],
-    ["Forensic Biotechnology (*)", [1, 1, 0, 0, 0]],
-    ["Forensic Science", [0, 0, 0, 1, 0]],
-    ["General Studies", [7, 4, 3, 6, 2]],
-    ["Health Science (*)", [0, 1, 2, 1, 0]],
-    ["Human Services", [2, 1, 3, 1, 1]],
-    ["Integrated Studies", [3, 0, 0, 0, 0]],
-    ["Kinesiology", [0, 1, 2, 1, 2]],
-    ["Not Applicable/Non-Degree-Seeking", [1, 0, 1, 1, 0]],
-    ["Psychology", [2, 2, 1, 1, 1]],
-    ["Grand Total", [30, 24, 24, 30, 20]],
-  ];
+    ["Accounting", [0, 1, 0, 0, 0]],
+    ["Associates in Science", [0, 0, 1, 0, 0]],
+    ["Biomedical Science", [1, 1, 0, 1, 1]],
+    ["Business Management", [0, 3, 6, 2, 0]],
+    ["Criminal Justice", [5, 6, 3, 2, 1]],
+    ["Digital & Studio Arts", [4, 4, 1, 1, 0]],
+    ["Elementary Education", [1, 3, 3, 1, 0]],
+    ["English & Media Communications", [1, 0, 0, 0, 0]],
+    ["Forensic Science", [0, 1, 0, 0, 0]],
+    ["General Studies", [3, 6, 1, 3, 0]],
+    ["Health Science (*)", [2, 1, 0, 0, 0]],
+    ["Human Services", [3, 1, 0, 1, 1]],
+    ["Kinesiology", [2, 1, 1, 2, 5]],
+    ["Neuroscience", [0, 0, 0, 0, 1]],
+    ["Psychology", [1, 1, 0, 1, 0]],
+    ["Not Applicable/Non-Degree-Seeking", [1, 1, 0, 0, 0]]
+];
+
+  // Initialize an array to store the column totals
+  $columnTotals = [];
+
+  // Iterate through the main data array
+  foreach ($data as $row) {
+    // The numbers array is the second element in each row (index 1)
+    $nums = $row[1];
+
+    // Iterate through the numbers array to sum the columns
+    foreach ($nums as $columnKey => $value) {
+        // If the column key doesn't exist in $columnTotals yet, initialize it to 0
+        if (!isset($columnTotals[$columnKey])) {
+            $columnTotals[$columnKey] = 0;
+        }
+        // Add the current value to the appropriate column total
+        $columnTotals[$columnKey] += $value;
+    }
+  }
+
+  // Optional: Display the results
+  echo "Column Totals:\n";
+  print_r($columnTotals);
+
+  array_push($data, ["Grand Total", [$columnTotals[0], $columnTotals[1], $columnTotals[2], $columnTotals[3], $columnTotals[4]]]);
 
   foreach ($data as $val)
    {
