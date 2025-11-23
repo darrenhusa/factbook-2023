@@ -65,8 +65,16 @@ Route::get('/section02', function () {
     return view('retention.section02');
 });
 
-Route::get('/section03', function () {
-    return view('high_school_gpas.section03');
+Route::get('/numbers_with_hs_gpa', function () {
+    return view('high_school_gpas.with_hs_gpa');
+});
+
+Route::get('/hs_gpa_averages', function () {
+    return view('high_school_gpas.hs_gpa_averages');
+});
+
+Route::get('/by_hs_gpa_range', function () {
+    return view('high_school_gpas.hs_gpa_range_percentages');
 });
 
 Route::get('/ccsj_grs', function () {

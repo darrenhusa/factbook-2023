@@ -31,7 +31,13 @@
             <li><a href="/catholic">Catholic</a></li>
         </ul>
         <li><a href="/section02">Retention Rates</a></li>
-        <li><a href="/section03">High School GPAs</a></li>
+
+        <li>High School GPAs</li>
+        <ul>
+            <li><a href="numbers_with_hs_gpa">Numbers with HS GPA</a></li>
+            <li><a href="hs_gpa_averages">Average HS GPA</a></li>
+            <li><a href="by_hs_gpa_range">Percent by HS GPA Ranges</a></li>
+        </ul>
         <li>Graduation Rates</li>
             <ul>
             <li><a href="/ccsj_grs">CCSJ Graduation Rates</a></li>
