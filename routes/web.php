@@ -69,8 +69,16 @@ Route::get('/section03', function () {
     return view('high_school_gpas.section03');
 });
 
-Route::get('/grs', function () {
-    return view('graduation_rates.ccsj_gr_data');
+Route::get('/ccsj_grs', function () {
+    return view('graduation_rates.ccsj');
+});
+
+Route::get('/4yr_comp', function () {
+    return view('graduation_rates.four_year_comparisons');
+});
+
+Route::get('/6yr_comp', function () {
+    return view('graduation_rates.six_year_comparisons');
 });
 
 // Route::get('/sankey-chart', function () {    
