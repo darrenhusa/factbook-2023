@@ -17,7 +17,7 @@
     $data17 = [
              ['label' => 'CCSJ', 'color' => '#8d230f', 'values' => [0, 0, 0, 0, 0] ],
              ['label' => 'IUNW', 'color' => '#217ca3', 'values' => [0, 0, 0, 0, 0] ],
-             ['label' => 'PUNW', 'color' => '', 'values' => [0, 0, 0, 0, 0] ],
+             ['label' => 'PUNW', 'color' => '#ffa500', 'values' => [0, 0, 0, 0, 0] ],
     ];
 
     $chart_lables = ["RY 2020", 'RY 2021', 'RY 2022', 'RY 2023', 'RY 2024'];

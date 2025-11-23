@@ -28,7 +28,7 @@
     $data18 = [
              ['label' => 'CCSJ', 'color' => '#8d230f', 'values' => $ccsj ],
              ['label' => 'IUNW', 'color' => '#217ca3', 'values' => $iunw ],
-             ['label' => 'PUNW', 'color' => '', 'values' => $punw ],
+             ['label' => 'PUNW', 'color' => '#ffa500', 'values' => $punw ],
     ];
     
     $series18 = [

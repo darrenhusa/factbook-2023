@@ -14,10 +14,12 @@
     $ccsj_4yr = [0, 0, 0, 0, 0];
     $ccsj_6yr = [44, 28, 24, 25, 30];
     $chart_lables = ["RY 2020", 'RY 2021', 'RY 2022', 'RY 2023', 'RY 2024'];
+    $red = '#8d230f';
+    $blue = '#217ca3';
 
     $data16 = [
-             ['label' => '4-YR Rate', 'color' => '#8d230f', 'values' => $ccsj_4yr ],
-             ['label' => '6-YR Rate', 'color' => '#217ca3', 'values' => $ccsj_6yr ],
+             ['label' => '4-YR Rate', 'color' => $blue, 'values' => $ccsj_4yr ],
+             ['label' => '6-YR Rate', 'color' => $red, 'values' => $ccsj_6yr ],
     ];
     
     $series16 = [
