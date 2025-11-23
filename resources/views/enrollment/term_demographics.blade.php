@@ -14,11 +14,11 @@
     @php
     
     $data17 = [
-             ['label' => 'Black or African American', 'color' => '#217ca3', 'values' => [60, 21, 59, 140]],
-             ['label' => 'Hispanics of any race', 'color' => '#8d230f', 'values' => [44, 13, 77, 134]],
-             ['label' => 'Other', 'color' => '#50CB93', 'values' => [17, 9, 17, 43]],
-             ['label' => 'White', 'color' => 'purple', 'values' => [29, 9, 59, 97]],
-             ['label' => 'Unknown', 'color' => '', 'values' => [4, 0, 0, 4]],
+             ['label' => 'Black or African American', 'color' => '#217ca3', 'values' => [22, 17, 75, 114]],
+             ['label' => 'Hispanics of any race', 'color' => '#8d230f', 'values' => [32, 12, 72, 116]],
+             ['label' => 'Other', 'color' => '#50CB93', 'values' => [8, 5, 12, 25]],
+             ['label' => 'White', 'color' => 'purple', 'values' => [45, 9, 71, 125]],
+             ['label' => 'Unknown', 'color' => '', 'values' => [39, 0, 1, 40]],
     ];
 
     $length17 = count($data17);
@@ -44,8 +44,8 @@
 
     $series17 = [
         'title' => 'Demographic Distribution',
-        'subtitle' => '(Fall 2023 Full-time Undergraduates)',
-        'categories' => ['First-time Students', 'Transfer Students', 'Continuing Students', 'All FT Undergrads'],
+        'subtitle' => '(Fall 2025 Full-time Undergraduates)',
+        'categories' => ['First-time Students', 'Transfer Students', 'Continuing/Returning Students', 'All FT Undergrads'],
         'data' => $data17,
     ];
 
@@ -84,11 +84,11 @@
         @php
     
     $data18 = [
-             ['label' => 'Black or African American', 'color' => '#217ca3', 'values' => [2, 5, 17, 24]],
-             ['label' => 'Hispanics of any race', 'color' => '#8d230f', 'values' => [0, 9, 43, 52]],
-             ['label' => 'Other', 'color' => '#50CB93', 'values' => [0, 1, 6, 7]],
-             ['label' => 'White', 'color' => 'purple', 'values' => [0, 18, 33, 51]],
-             ['label' => 'Unknown', 'color' => '', 'values' => [0, 6, 6, 12]],
+             ['label' => 'Black or African American', 'color' => '#217ca3', 'values' => [0, 0, 5, 5]],
+             ['label' => 'Hispanics of any race', 'color' => '#8d230f', 'values' => [0, 0, 2, 2]],
+             ['label' => 'Other', 'color' => '#50CB93', 'values' => [0, 0, 0, 0]],
+             ['label' => 'White', 'color' => 'purple', 'values' => [0, 0, 2, 2]],
+             ['label' => 'Unknown', 'color' => '', 'values' => [0, 0, 0, 0]],
     ];
 
     $length18 = count($data18);
@@ -114,14 +114,14 @@
 
     $series18 = [
         'title' => 'Demographic Distribution',
-        'subtitle' => '(Fall 2023 Part-time Undergraduates)',
-        'categories' => ['First-time Students', 'Transfer Students', 'Continuing Students', 'All PT Undergrads'],
+        'subtitle' => '(Fall 2025 Part-time Undergraduates)',
+        'categories' => ['First-time Students', 'Transfer Students', 'Continuing/Returning Students', 'All PT Undergrads'],
         'data' => $data18,
     ];
 
     @endphp
 
-    <h2>Figure 18 - Demographic Distribution (in %) - Fall 2023 Part-time Undergraduates</h2>
+    <h2>Figure ?? - Demographic Distribution (in %) - Fall 2025 Part-time Undergraduates</h2>
     <stacked-column-with-data-label-percents-chart 
         :series='@json($series18)'
         :chart-width="1200"
