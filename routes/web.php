@@ -29,7 +29,7 @@ Route::get('/historical_headcounts', function () {
 });
 
 Route::get('/section01-enrollment', function () {
-    return view('enrollment.section01-enrollment');
+    return view('enrollment.__section01-enrollment');
 });
 
 Route::get('/table-01', function () {
@@ -69,9 +69,9 @@ Route::get('/section03', function () {
     return view('high_school_gpas.section03');
 });
 
-// Route::get('/section06', function () {
-//     return view('section06');
-// });
+Route::get('/grs', function () {
+    return view('graduation_rates.ccsj_gr_data');
+});
 
 // Route::get('/sankey-chart', function () {    
 //     return view('sankey_charts.sankey-chart');

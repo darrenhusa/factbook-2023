@@ -21,7 +21,7 @@
     <ul>
         <li>Enrollment</li>
         <ul>
-            <!-- <li><a href="/section01-enrollment">Enrollment</a></li> -->
+            <li><a href="/section01-enrollment">Archived Misc charts</a></li>
             <li><a href="/historical_headcounts">Historical CCSJ Headcounts</a></li>
             <li><a href="/table-01">Table ?? - Total College</a></li>
             <li><a href="/table-02">Table ?? - Full-Time Undergraduates - First Majors - Traditional Programs</a></li>
@@ -32,7 +32,7 @@
         </ul>
         <li><a href="/section02">Retention Rates</a></li>
         <li><a href="/section03">High School GPAs</a></li>
-        <li><a href="#"></a>Graduation Rates</li>
+        <li><a href="/grs">Graduation Rates</a></li>
     </ul>
     
     <!-- </div> -->
