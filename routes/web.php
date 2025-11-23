@@ -6,70 +6,84 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/sample-charts', function () {    
-    return view('sample-charts');
-});
+// Route::get('/sample-charts', function () {    
+//     return view('sample-charts');
+// });
 
-Route::get('/practice', function () {    
-    return view('section01-practice');
-});
+// Route::get('/practice', function () {    
+//     return view('section01-practice');
+// });
 
 
-Route::get('/export', function () {
-    return view('export-chart2');
-});
+// Route::get('/export', function () {
+//     return view('export-chart2');
+// });
 
-Route::get('/sparklines', function () {
-    return view('sparkline-demo');
-});
+// Route::get('/sparklines', function () {
+//     return view('sparkline-demo');
+// });
 
-Route::get('/table-01', function () {
-    return view('table-01');
-});
 
-Route::get('/table-02', function () {
-    return view('table-02');
-});
-
-Route::get('/table-03', function () {
-    return view('table-03');
-});
-
-Route::get('/table-04', function () {
-    return view('table-04');
+Route::get('/historical_headcounts', function () {
+    return view('enrollment.historical_headcounts');
 });
 
 Route::get('/section01-enrollment', function () {
-    return view('section01-enrollment');
+    return view('enrollment.section01-enrollment');
 });
 
-Route::get('/section01-practice', function () {
-    return view('section01-practice');
+Route::get('/table-01', function () {
+    return view('enrollment.table-01');
 });
+
+Route::get('/table-02', function () {
+    return view('enrollment.table-02');
+});
+
+Route::get('/table-03', function () {
+    return view('enrollment.table-03');
+});
+
+Route::get('/table-04', function () {
+    return view('enrollment.table-04');
+});
+
+Route::get('/catholic', function () {
+    return view('enrollment.catholic');
+});
+
+Route::get('/term_demographics', function () {
+    return view('enrollment.term_demographics');
+});
+
+
+// Route::get('/section01-practice', function () {
+//     return view('section01-practice');
+// });
 
 Route::get('/section02', function () {
-    return view('section02');
+    return view('retention.section02');
 });
 
 Route::get('/section03', function () {
-    return view('section03');
+    return view('high_school_gpas.section03');
 });
 
-Route::get('/section06', function () {
-    return view('section06');
-});
+// Route::get('/section06', function () {
+//     return view('section06');
+// });
 
-Route::get('/sankey-chart', function () {    
-    return view('sankey-chart');
-});
+// Route::get('/sankey-chart', function () {    
+//     return view('sankey_charts.sankey-chart');
+// });
 
-Route::get('/sankey-demo', function () {    
-    return view('sankey-demo');
-});
+// Route::get('/sankey-demo', function () {    
+//     return view('sankey-demo');
+// });
 
-Route::get('/sankey-dept1', function () {    
-    return view('sankey-chart-dept1');
-});
+// Route::get('/sankey-dept1', function () {    
+//     return view('sankey-chart-dept1');
+// });
 
 // Route::get('/', function () {
 //     return view('welcome');
