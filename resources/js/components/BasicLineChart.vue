@@ -178,9 +178,28 @@ export default {
               enableMouseTracking: false,
             marker: {
             symbol: 'circle'
-          }
-          },
-        },
+          },  // end line
+
+          series: {
+                dataLabels: {
+                    enabled: true, // Enable data labels for all points initially
+                    formatter: function() {
+                        var seriesPoints = this.series.points;
+                        // Check if the current point is the last point in the series
+                        if (this.point === seriesPoints[seriesPoints.length - 1]) {
+                            return this.y; // Return the value (or custom text) for the last point
+                        }
+                    },
+                    // Optional: allow labels to overlap if needed
+                    allowOverlap: true 
+                },
+                // Optional: ensure markers are shown for all points or only the last one
+                marker: {
+                    enabled: false // Disable markers for all points by default
+                }
+            }
+          },  // end series
+        },  // end plotOptions
 
       tooltip: {
         valueSuffix: ''
