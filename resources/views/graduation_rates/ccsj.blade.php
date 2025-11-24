@@ -11,15 +11,19 @@
         
 @php
 
-    $ccsj_4yr = [0, 0, 0, 0, 0];
-    $ccsj_6yr = [44, 28, 24, 25, 30];
-    $chart_lables = ["RY 2020", 'RY 2021', 'RY 2022', 'RY 2023', 'RY 2024'];
+    $ccsj_4yr = [16, 17, 27, 25, 14];
+    $ccsj_6yr = [24, 26, 35, 28, 17];
+    $ccsj_8yr = [27, 33, 41, 29, 18];
+
+    $chart_lables = ['DFR 2020-CS 2011', 'DFR 2021-CS 2012', 'DFR 2022-CS 2013', 'DFR 2023-CS 2014', 'DFR 2024-CS 2015'];
     $red = '#8d230f';
     $blue = '#217ca3';
+    $orange = '#ffa500';
 
     $data16 = [
              ['label' => '4-YR Rate', 'color' => $blue, 'values' => $ccsj_4yr ],
              ['label' => '6-YR Rate', 'color' => $red, 'values' => $ccsj_6yr ],
+             ['label' => '8-YR Rate', 'color' => $orange, 'values' => $ccsj_8yr ],
     ];
     
     $series16 = [

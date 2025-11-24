@@ -23,7 +23,7 @@
     $iunw = [35, 32, 38, 37, 37];
     $punw = [38, 42, 40, 44, 44];
 
-    $chart_lables = ["RY 2020-CS 2013", 'RY 2021-CS 2014', 'RY 2022-CS 2015', 'RY 2023-CS 2016', 'RY 2024-CS 2017'];
+    $chart_lables = ["DFR 2020-CS 2013", 'DFR 2021-CS 2014', 'DFR 2022-CS 2015', 'DFR 2023-CS 2016', 'DFR 2024-CS 2017'];
     
     $data18 = [
              ['label' => 'CCSJ', 'color' => '#8d230f', 'values' => $ccsj ],
