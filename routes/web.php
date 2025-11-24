@@ -61,8 +61,8 @@ Route::get('/term_demographics', function () {
 //     return view('section01-practice');
 // });
 
-Route::get('/section02', function () {
-    return view('retention.section02');
+Route::get('/trad_retention', function () {
+    return view('retention.ft_trad_retention');
 });
 
 Route::get('/numbers_with_hs_gpa', function () {

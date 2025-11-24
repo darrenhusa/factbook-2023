@@ -21,7 +21,7 @@
     <ul>
         <li>Enrollment</li>
         <ul>
-            <li><a href="/section01-enrollment">Archived Misc charts</a></li>
+            <!-- <li><a href="/section01-enrollment">Archived Misc charts</a></li> -->
             <li><a href="/historical_headcounts">Historical CCSJ Headcounts</a></li>
             <li><a href="/table-01">Table ?? - Total College</a></li>
             <li><a href="/table-02">Table ?? - Full-Time Undergraduates - First Majors - Traditional Programs</a></li>
@@ -30,8 +30,10 @@
             <li><a href="/term_demographics">Demographics</a></li>
             <li><a href="/catholic">Catholic</a></li>
         </ul>
-        <li><a href="/section02">Retention Rates</a></li>
-
+            <li>Retention Rates</li>
+        <ul>
+            <li><a href="/trad_retention">Full-time TRAD Retention Rates</a></li>
+        </ul>
         <li>High School GPAs</li>
         <ul>
             <li><a href="numbers_with_hs_gpa">Numbers with HS GPA</a></li>
@@ -43,7 +45,6 @@
             <li><a href="/ccsj_grs">CCSJ Graduation Rates</a></li>
             <li><a href="/4yr_comp">4 Year Graduation Rate Comparisons</a></li>
             <li><a href="/6yr_comp">6 Year Graduation Rate Comparisons</a></li>
-            <li><a href="#">-----</a></li>
         </ul>
 
     </ul>
