@@ -30,7 +30,7 @@
     
     $series16 = [
         'title' => "CCSJ Graduation Rates (in %)",
-        'subtitle' => "",
+        'subtitle' => "Using data from the standard IPEDS Graduation Rate (GR) cohorts",
         'x_axis' => '',
         'y_axis_visible' => false,
         'y_axis' => 'Percentage (%)',
