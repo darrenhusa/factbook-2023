@@ -42,7 +42,7 @@
 
 <div id="app">
 
-    <h2>Figure 30 - Fall-to-Fall Retention of First-time, First-semester TRAD Freshman</h2>
+    <h2>Figure ?? - Fall-to-Fall Retention of First-time, First-semester TRAD Freshman</h2>
     <!-- <stacked-percentage-column-chart 
         :series='@json($series30)'
         :chart-width="1200"

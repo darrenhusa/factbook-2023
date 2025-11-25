@@ -33,6 +33,8 @@
             <li>Retention Rates</li>
         <ul>
             <li><a href="/trad_retention">Full-time TRAD Retention Rates</a></li>
+            <li><a href="/fall-to-spring-f1-trend">Fall-to-Spring FT, FT, F1 Retention Trends</a></li>
+            <li><a href="/fall-to-fall-f1-trend">Fall-to-Fall FT, FT, F1 Retention Trends</a></li>
         </ul>
         <li>High School GPAs</li>
         <ul>

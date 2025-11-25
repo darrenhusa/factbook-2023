@@ -65,6 +65,15 @@ Route::get('/trad_retention', function () {
     return view('retention.ft_trad_retention');
 });
 
+Route::get('/fall-to-spring-f1-trend', function () {
+    return view('retention.fall-to-spring-f1-trend');
+});
+
+Route::get('/fall-to-fall-f1-trend', function () {
+    return view('retention.fall-to-fall-f1-trend');
+});
+
+
 Route::get('/numbers_with_hs_gpa', function () {
     return view('high_school_gpas.with_hs_gpa');
 });
