@@ -42,88 +42,16 @@ export default {
           border: '1px solid gray',
         },
       }
-    },
+    },  // end data
+
     mounted : function() {
-
-  //      (function(H) {
-  //   H.wrap(H.Chart.prototype, 'setChartSize', function(proceed, skipAxes) {
-  //     var chart = this,
-  //       inverted = chart.inverted,
-  //       renderer = chart.renderer,
-  //       chartWidth = chart.chartWidth,
-  //       chartHeight = chart.chartHeight,
-  //       optionsChart = chart.options.chart,
-  //       spacing = chart.spacing,
-  //       clipOffset = chart.clipOffset,
-  //       clipX,
-  //       clipY,
-  //       plotLeft,
-  //       plotTop,
-  //       plotWidth,
-  //       plotHeight,
-  //       plotBorderWidth,
-  //       plotAreaWidth = chart.options.chart.plotAreaWidth,
-  //       plotAreaHeight = chart.options.chart.plotAreaHeight;
-
-  //     if (plotAreaWidth) {
-  //       chart.plotWidth = plotWidth = plotAreaWidth;
-  //       chart.plotLeft = plotLeft = Math.round((chartWidth - plotAreaWidth) / 2);
-  //     } else {
-  //       chart.plotLeft = plotLeft = Math.round(chart.plotLeft);
-  //       chart.plotWidth = plotWidth = Math.max(0, Math.round(chartWidth - plotLeft - chart.marginRight));
-  //     }
-  //     if (plotAreaHeight) {
-  //       chart.plotTop = plotTop = Math.round((chartHeight - plotAreaHeight) / 2);
-  //       chart.plotHeight = plotHeight = plotAreaHeight;
-  //     } else {
-  //       chart.plotTop = plotTop = Math.round(chart.plotTop);
-  //       chart.plotHeight = plotHeight = Math.max(0, Math.round(chartHeight - plotTop - chart.marginBottom));
-  //     }
-
-  //     chart.plotSizeX = inverted ? plotHeight : plotWidth;
-  //     chart.plotSizeY = inverted ? plotWidth : plotHeight;
-
-  //     chart.plotBorderWidth = optionsChart.plotBorderWidth || 0;
-
-  //     // Set boxes used for alignment
-  //     chart.spacingBox = renderer.spacingBox = {
-  //       x: spacing[3],
-  //       y: spacing[0],
-  //       width: chartWidth - spacing[3] - spacing[1],
-  //       height: chartHeight - spacing[0] - spacing[2]
-  //     };
-  //     chart.plotBox = renderer.plotBox = {
-  //       x: plotLeft,
-  //       y: plotTop,
-  //       width: plotWidth,
-  //       height: plotHeight
-  //     };
-
-  //     plotBorderWidth = 2 * Math.floor(chart.plotBorderWidth / 2);
-  //     clipX = Math.ceil(Math.max(plotBorderWidth, clipOffset[3]) / 2);
-  //     clipY = Math.ceil(Math.max(plotBorderWidth, clipOffset[0]) / 2);
-  //     chart.clipBox = {
-  //       x: clipX,
-  //       y: clipY,
-  //       width: Math.floor(chart.plotSizeX - Math.max(plotBorderWidth, clipOffset[1]) / 2 - clipX),
-  //       height: Math.max(0, Math.floor(chart.plotSizeY - Math.max(plotBorderWidth, clipOffset[2]) / 2 - clipY))
-  //     };
-
-  //     if (!skipAxes) {
-  //       Highcharts.each(chart.axes, function(axis) {
-  //         axis.setAxisSize();
-  //         axis.setAxisTranslation();
-  //       });
-  //     }
-  //   });
-  // }(Highcharts));
 
       // console.log(this.series);
       // console.log(this.series.title);
 
       // see https://stackoverflow.com/questions/50144557/how-to-add-data-to-chart-js-with-a-for-loop/50144700
       const seriesTemp = [];
-      const number = this.series.data.length
+      const number = this.series.data.length;
 
       for(let i=0; i<number; i++){
         seriesTemp.push({
@@ -132,28 +60,54 @@ export default {
             color: this.series.data[i].color,
             dataLabels: {enabled: this.series.data[i].showDataLabels}
         });
-      }
+      } // end for
 
       // alert(seriesTemp);
       // console.log(seriesTemp);
 
       this.target = Highcharts.chart(this.$el, {
-        // chart: {
-        //   plotAreaWidth: this.inputPlotWidth,
-        //   plotAreaHeight: this.inputPlotHeight
-        // },
-        
+    
+        events: {
+            load: function () {
+                const chart = this;
+                chart.series.forEach(function (series) {
+                    if (series.data.length > 0) {
+                        const lastPoint = series.data[series.data.length - 1];
+                        lastPoint.update({
+                            marker: {
+                                enabled: true,
+                                // radius: 5, // Customize marker size
+                                // fillColor: 'white', // Customize marker color
+                                // lineColor: series.color, // Match series color
+                                // lineWidth: 2
+                            },
+                            dataLabels: {
+                                enabled: true,
+                                formatter: function () {
+                                    return this.y; // Display the y-value of the last point
+                                },
+                                // align: 'right',
+                                // x: 5 // Adjust label position
+                            }
+                        }, false); // Set to false to avoid redraw until all updates are done
+                    }
+                });  // end forEach
+                
+                chart.redraw(); // Redraw the chart after all updates
+            } // end load
+        }, // end events
+      
         title: {
           text: this.series.title,
           x: -20 //center
-        },
+        }, // end ytitle
         subtitle: {
           text: this.series.subtitle,
           x: -20
-        },
+        }, // end subtitle
         xAxis: {
           categories: this.series.categories
-        },
+        }, // end xAxis
         yAxis: {
           min: 0,
           max: 1500,
@@ -176,34 +130,35 @@ export default {
               //     enabled: this.showDataLabels
               // },
               enableMouseTracking: false,
-            marker: {
-            symbol: 'circle'
-          },  // end line
-
-          series: {
-                dataLabels: {
-                    enabled: true, // Enable data labels for all points initially
-                    formatter: function() {
-                        var seriesPoints = this.series.points;
-                        // Check if the current point is the last point in the series
-                        if (this.point === seriesPoints[seriesPoints.length - 1]) {
-                            return this.y; // Return the value (or custom text) for the last point
-                        }
-                    },
-                    // Optional: allow labels to overlap if needed
-                    allowOverlap: true 
-                },
-                // Optional: ensure markers are shown for all points or only the last one
                 marker: {
-                    enabled: false // Disable markers for all points by default
-                }
-            }
-          },  // end series
+                symbol: 'circle'
+              },  // end marker
+          },  // end line
         },  // end plotOptions
 
+          // series: {
+          //       dataLabels: {
+          //           enabled: true, // Enable data labels for all points initially
+          //           formatter: function() {
+          //               var seriesPoints = this.series.points;
+          //               // Check if the current point is the last point in the series
+          //               if (this.point === seriesPoints[seriesPoints.length - 1]) {
+          //                   return this.y; // Return the value (or custom text) for the last point
+          //               }
+          //           },
+          //           // Optional: allow labels to overlap if needed
+          //           allowOverlap: true 
+          //       },
+          //       // Optional: ensure markers are shown for all points or only the last one
+          //       marker: {
+          //           enabled: false // Disable markers for all points by default
+          //       }
+          //   }
+          // },  // end series
+       
       tooltip: {
         valueSuffix: ''
-      },
+      },  // end tooltip
 
       legend: {
         layout: 'horizontal',
@@ -212,8 +167,8 @@ export default {
         // align: 'right',
         verticalAlign: 'top',
         // verticalAlign: 'middle',
-  	        borderWidth: 0
-      },
+  	    borderWidth: 0,
+      },  // end legend
 
         series: seriesTemp,
         // dataLabels: {
@@ -228,9 +183,10 @@ export default {
         //   etc. etc.
         credits: {
           enabled: false
-        },
-    });
-  },
+        }, // end credits
+    });  // end Highcharts.chart
+  },  // end mounted()
+
 //   beforeDestroy: function() {
 //     this.target.destroy();
 //   },
