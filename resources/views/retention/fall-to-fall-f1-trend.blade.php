@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Section 02</title>
+    <title>Retention Rates</title>
     <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
 </head>
 <body>
    
 @php
     
-    $full_time = [48.5, 57.6, 42.7, 59.4, 35.8];
-    $part_time = [0.0, 0.0, 25.0, 33.3, 0.0];
+    $full_time = [41.8, 56.9, 37.1, 40.4, 52.2];
+    $part_time = [20.0, 42.9, 0.0, 0.0, 33.3];
 
-    $chart_labels = ['Fall 2018-Fall 2019', 
-                     'Fall 2019-Fall 2020', 
-                     'Fall 2020-Fall 2021', 
+    $chart_labels = ['Fall 2020-Fall 2021', 
                      'Fall 2021-Fall 2022', 
-                     'Fall 2022-Fall 2023'];
+                     'Fall 2022-Fall 2023', 
+                     'Fall 2023-Fall 2024', 
+                     'Fall 2024-Fall 2025'];
 
     // DON'T EDIT PHP BLOCK BELOW THIS LINE
     
