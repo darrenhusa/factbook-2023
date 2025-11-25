@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 01</title>
+    <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
+</head>
+<body>
+        
+@php
+
+// for figure 01   
+// colors taken from Excel chart via rgb lookup.
+// colors converted to hex using https://www.rgbtohex.net/
+$dcp_headcounts = [141,	143, 165, 189, 306, 343, 339, 377, 464, 483, 443, 392, 359, 365, 343, 337, 326, 265, 324, 279, 253, 249, 149, 141, 127, 133, 127, 125, 132, 140, 163];
+$grad_headcounts = ['', '', '', '', '', '', '', 115, 171, 149, 129,	196, 216, 157, 194,	184, 170, 164, 152,	169, 220, 256, 214, 190, 169, 138, 106, 95, 114, 128, 120];
+$trad_ft_headcounts = [313, 286, 327, 319, 300, 267, 313, 326, 383, 405, 435, 435, 448, 493, 565, 543, 493, 475, 528, 496, 497, 443, 403, 353, 384, 409, 370, 415, 412, 376, 423];
+$trad_pt_headcounts = [578,	559, 497, 468, 397,	365, 353, 323, 312,	301, 255, 248, 218,	199, 210, 187, 153,	129, 132, 85, 72, 46, 37, 31, 29, 23, 25, 29, 16, 14, 10];
+
+$grand_totals_headcounts = [1032, 988, 989, 976, 1003, 975, 1005, 1141, 1330, 1338, 1262, 1271, 1241, 1214, 1312, 1251, 1142, 1033, 1136, 1029, 1042, 994, 803, 715, 709, 703, 628, 664, 674, 658, 716];
+
+$chart_title = 'Historical CCSJ Headcounts (Fall 1995 to Fall 2025 - as of 9/10/2025)';
+$chart_labels = [19951,	19961,	19971,	19981, 19991, 20001, 20011,	20021,	20031,	20041,	20051,	20061,	20071,	20081,	20091,	20101,	20111,	20121,	20131,	20141,	20151,	20161,	20171,	20181,	20191,	20201,	20211, 20221, 20231, 20241, 20251];
+
+$sankey_data =[
+
+          //part 1
+          ['General Studies', 'General Studies2', 17],
+          ['General Studies', 'Changed Programs2', 8],
+          ['General Studies', 'Earned Bachelors2', 2],
+          ['General Studies', 'Stop-out2', 13],
+          
+          //part 2
+          ['General Studies2', 'General Studies3', 7],
+          ['Stop-out2', 'General Studies3', 1],
+          ['General Studies2', 'Changed Programs3', 11],
+          ['General Studies2', 'Earned Bachelors3', 3],
+          ['General Studies2', 'Stop-out3', 18],
+          
+          //part 1
+          ['Human Services', 'Human Services2', 11],
+          ['Human Services', 'Changed Programs2', 3],
+          ['Human Services', 'Earned Bachelors2', 1],
+          ['Human Services', 'Stop-out2', 4],
+          
+          //part 2
+          ['Human Services2', 'Human Services3', 7],
+          ['Human Services2', 'Changed Programs3', 3],
+          ['Human Services2', 'Earned Bachelors3', 2],
+          ['Human Services2', 'Stop-out3', 7],
+          
+          //part 1
+          ['Psychology', 'Psychology2', 27],
+          ['Psychology', 'Changed Programs2', 5],
+          ['Psychology', 'Earned Bachelors2', 1],
+          ['Psychology', 'Stop-out2', 3],
+
+          //part 2
+          ['Psychology2', 'Psychology3', 19],
+          ['Stop-out2', 'Psychology3', 0],
+          ['Psychology2', 'Changed Programs3', 5],
+          ['Psychology2', 'Earned Bachelors3', 2],
+          ['Psychology2', 'Stop-out3', 10],
+
+        ]
+    ];
+    
+
+// DON'T EDIT PHP BLOCK BELOW THIS LINE
+
+$data1 = [['label' => 'DCP', 'color' => '#5B9BD5', 'showDataLabels' => false,  'values' => $dcp_headcounts],
+         ['label' => 'GRAD', 'color' => '#ED7D31', 'showDataLabels' => false, 'values' => $grad_headcounts],
+         ['label' => 'TRAD - FT', 'color' => '#A5A5A5',  'showDataLabels' => true, 'values' => $trad_ft_headcounts],
+         ['label' => 'TRAD - PT', 'color' => '#FFCC00', 'showDataLabels' => false, 'values' => $trad_pt_headcounts],
+         ['label' => 'Grand Total', 'color' => '#4472C4', 'showDataLabels' => true, 'values' => $grand_totals_headcounts],
+];
+
+$series1 = [
+    'title' => $chart_title,
+    'subtitle' => '',
+    'y_axis' => '',
+    'categories' => $chart_labels,
+    'data' => $data1,
+];
+@endphp
+
+    <div id="app">
+
+        <h2>Figure ?? - Historical CCSJ Headcounts (Fall 1995 to Fall 2025)</h2>
+        <basic-line-chart 
+            v-bind:series='@json($series1)'
+            v-bind:chart-width="1200"
+            v-bind:chart-height="800">
+        </basic-line-chart>
+    
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
