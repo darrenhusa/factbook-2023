@@ -11,14 +11,14 @@
 
 @php
     
-    $full_time = [75.7, 75.8, 70.2, 89.1, 66.7];
-    $part_time = [0.0, 66.7, 12.5, 33.3, 20.0];
+    $full_time = [68.5, 86.2, 67.1, 77.0, 76.1];
+    $part_time = [10.0, 42.9, 16.7, 0.0, 33.3, 21.4];
 
-    $chart_labels = ['Fall 2018-Spring 2019', 
-                     'Fall 2019-Spring 2020', 
-                     'Fall 2020-Spring 2021', 
+    $chart_labels = ['Fall 2020-Spring 2021', 
                      'Fall 2021-Spring 2022', 
-                     'Fall 2022-Spring 2023'];
+                     'Fall 2022-Spring 2023', 
+                     'Fall 2023-Spring 2024', 
+                     'Fall 2024-Spring 2025'];
 
     // DON'T EDIT PHP BLOCK BELOW THIS LINE
     
