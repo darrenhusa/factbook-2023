@@ -23,7 +23,7 @@
     $iunw = [35, 32, 38, 37, 37];
     $punw = [38, 42, 40, 44, 44];
 
-    $chart_lables = ["DFR 2020-CS 2013", 'DFR 2021-CS 2014', 'DFR 2022-CS 2015', 'DFR 2023-CS 2016', 'DFR 2024-CS 2017'];
+    $chart_labels = ["DFR 2020-CS 2013", 'DFR 2021-CS 2014', 'DFR 2022-CS 2015', 'DFR 2023-CS 2016', 'DFR 2024-CS 2017'];
     
     $data18 = [
              ['label' => 'CCSJ', 'color' => '#8d230f', 'values' => $ccsj ],
@@ -33,12 +33,12 @@
     
     $series18 = [
         'title' => "6-Yr Graduation Rates (in %)",
-        'subtitle' => "",
+        'subtitle' => "Using data from IPEDS Graduation Rate 200 cohorts",
         'x_axis' => '',
         'y_axis_visible' => false,
         'y_axis' => 'Percentage (%)',
         'y_axis_max' => 100,
-        'categories' => $chart_lables,
+        'categories' => $chart_labels,
         'data' => $data18,
     ];
 

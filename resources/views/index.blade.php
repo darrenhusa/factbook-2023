@@ -45,7 +45,7 @@
         <li>Graduation Rates</li>
             <ul>
             <li><a href="/ccsj_grs">CCSJ Graduation Rates</a></li>
-            <!-- <li><a href="/4yr_comp">4 Year Graduation Rate Comparisons</a></li> -->
+            <li><a href="/4yr_comp">4 Year Graduation Rate Comparisons</a></li>
             <li><a href="/6yr_comp">6 Year Graduation Rate Comparisons</a></li>
         </ul>
 

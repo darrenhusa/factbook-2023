@@ -21,9 +21,31 @@ if (! function_exists('calculate_element_sum')) {
     }
 }
 
-// if (! function_exists('anotherHelper')) {
-//     function anotherHelper($value)
-//     {
-//         return strtoupper($value);
-//     }
-// }
+
+if (! function_exists('divideArraysElementByElement')) {
+
+    function divideArraysElementByElement(array $array1, array $array2): array
+    {
+        // Check if arrays have the same number of elements
+        if (count($array1) !== count($array2)) {
+            throw new InvalidArgumentException("Arrays must have the same number of elements.");
+        }
+
+        $result = [];
+        $count = count($array1);
+
+        for ($i = 0; $i < $count; $i++) {
+            // Handle division by zero
+            if ($array2[$i] === 0) {
+                $result[$i] = NAN; // Not a Number for division by zero
+                // Or you could throw an exception, or assign a specific value like 0
+                // throw new DivisionByZeroError("Division by zero at index $i.");
+            } else {
+                $result[$i] = $array1[$i] / $array2[$i];
+            }
+        }
+
+        return $result;
+    }
+
+}
