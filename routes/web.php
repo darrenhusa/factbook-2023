@@ -28,6 +28,11 @@ Route::get('/historical_headcounts', function () {
     return view('enrollment.historical_headcounts');
 });
 
+Route::get('/test-chart', function () {
+    return view('enrollment.test-chart');
+});
+
+
 Route::get('/section01-enrollment', function () {
     return view('enrollment.__section01-enrollment');
 });

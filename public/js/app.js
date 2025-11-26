@@ -4313,6 +4313,279 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! highcharts */ "./node_modules/highcharts/highcharts.js");
+/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! highcharts/modules/exporting */ "./node_modules/highcharts/modules/exporting.js");
+/* harmony import */ var highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+// var Highcharts = require('highcharts');
+
+
+highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts__WEBPACK_IMPORTED_MODULE_0___default())); // import LineChartWithDifferingDataLabels from '@/components/LineChartWithDifferingDataLabels.vue';
+// export default {
+// name: 'ParentUsingChart',
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "LineChartWithDifferingDataLabels",
+  // components: {
+  // 'line-chart-with-differing-data-labels': LineChartWithDifferingDataLabels
+  // },
+  props: {
+    series: {
+      // type: Array,
+      type: Object,
+      required: true
+    },
+    showDataLabels: {
+      type: Boolean,
+      "default": false
+    },
+    chartWidth: {
+      type: Number,
+      "default": 300
+    },
+    chartHeight: {
+      type: Number,
+      "default": 300
+    }
+  },
+  data: function data() {
+    return {
+      // target: 'container'
+      target: undefined,
+      // width: '300px',
+      // height: '300px',
+      styleObject: {
+        width: this.chartWidth + 'px',
+        height: this.chartHeight + 'px',
+        border: '1px solid gray'
+      }
+    };
+  },
+  // end data
+  mounted: function mounted() {
+    // console.log(this.series);
+    // console.log(this.series.title);
+    // see https://stackoverflow.com/questions/50144557/how-to-add-data-to-chart-js-with-a-for-loop/50144700
+    var seriesTemp = [];
+    var number = this.series.data.length;
+
+    for (var i = 0; i < number; i++) {
+      var name = this.series.data[i].label;
+      var data = this.series.data[i].values;
+      var color = this.series.data[i].color; // choose between all data labels shown or last data label only formats
+
+      var all_points_format_enabled = this.series.data[i].showDataLabels; // var last_point_format_enabled = this.series.data[i].lastPoint;
+      // const all_points_format = {enabled: true,};
+      // const last_point_format = {
+      //   enabled: true,
+      //   formatter: function () {
+      //     const lastIndex = number - 1;
+      //     return this.point.index === lastIndex ? this.y : null;
+      //   },
+      // };
+
+      var dataLabels = void 0;
+      var marker = void 0;
+      var series_obj = void 0;
+
+      if (all_points_format_enabled) {
+        dataLabels = {
+          enabled: true
+        };
+        marker = {
+          enabled: true
+        };
+        series_obj = {
+          name: name,
+          data: data,
+          color: color,
+          dataLabels: dataLabels,
+          marker: marker // Explicitly enable markers for all points
+
+        }; // console.log(i, name, 'use all points format');
+      } else {
+        dataLabels = {
+          enabled: true,
+          formatter: function formatter() {
+            var lastIndex = number - 1;
+            return this.point.index === lastIndex ? this.y : null;
+          }
+        };
+        marker = {
+          enabled: false
+        };
+        series_obj = {
+          name: name,
+          data: data,
+          color: color,
+          dataLabels: dataLabels,
+          marker: marker // (optional) show a marker only on the last point
+
+        }; // console.log(i, name, 'use last point format');
+      } // console.log(name, data, color, all_points_format_enabled);;
+      // console.log(dataLabels);
+      // console.log('');
+      // console.log('');
+      // if ((all_points_format_enabled) & (!last_point_format_enabled)) {
+      //   dataLabels = all_points_format;
+      // }
+      // else {
+      //   dataLabels = last_point_format;
+      // }
+
+
+      seriesTemp.push(series_obj);
+    } // end for
+    // alert(seriesTemp);
+    // console.log(seriesTemp);
+
+
+    this.target = highcharts__WEBPACK_IMPORTED_MODULE_0___default().chart(this.$el, {
+      // events: {
+      //     load: function () {
+      //         const chart = this;
+      //         chart.series.forEach(function (series) {
+      //             if (series.data.length > 0) {
+      //                 const lastPoint = series.data[series.data.length - 1];
+      //                 lastPoint.update({
+      //                     marker: {
+      //                         enabled: true,
+      //                         // radius: 5, // Customize marker size
+      //                         // fillColor: 'white', // Customize marker color
+      //                         // lineColor: series.color, // Match series color
+      //                         // lineWidth: 2
+      //                     },
+      //                     dataLabels: {
+      //                         enabled: true,
+      //                         formatter: function () {
+      //                             return this.y; // Display the y-value of the last point
+      //                         },
+      //                         // align: 'right',
+      //                         // x: 5 // Adjust label position
+      //                     }
+      //                 }, false); // Set to false to avoid redraw until all updates are done
+      //             }
+      //         });  // end forEach
+      //         chart.redraw(); // Redraw the chart after all updates
+      //     } // end load
+      // }, // end events
+      title: {
+        text: this.series.title,
+        x: -20 //center
+
+      },
+      // end ytitle
+      subtitle: {
+        text: this.series.subtitle,
+        x: -20
+      },
+      // end subtitle
+      xAxis: {
+        categories: this.series.categories
+      },
+      // end xAxis
+      yAxis: {
+        min: 0,
+        max: 1500,
+        tickInterval: 100,
+        // tickPixelInterval: 100,
+        title: {
+          text: this.series.y_axis
+        },
+        plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+        }]
+      },
+      // end yAxis
+      plotOptions: {
+        line: {
+          // dataLabels: {
+          //     enabled: this.showDataLabels
+          // },
+          enableMouseTracking: false,
+          marker: {
+            symbol: 'circle'
+          } // end marker
+
+        } // end line
+
+      },
+      // end plotOptions
+      // series: {
+      //       dataLabels: {
+      //           enabled: true, // Enable data labels for all points initially
+      //           formatter: function() {
+      //               var seriesPoints = this.series.points;
+      //               // Check if the current point is the last point in the series
+      //               if (this.point === seriesPoints[seriesPoints.length - 1]) {
+      //                   return this.y; // Return the value (or custom text) for the last point
+      //               }
+      //           },
+      //           // Optional: allow labels to overlap if needed
+      //           allowOverlap: true 
+      //       },
+      //       // Optional: ensure markers are shown for all points or only the last one
+      //       marker: {
+      //           enabled: false // Disable markers for all points by default
+      //       }
+      //   }
+      // },  // end series
+      tooltip: {
+        valueSuffix: ''
+      },
+      // end tooltip
+      legend: {
+        layout: 'horizontal',
+        // layout: 'vertical',
+        align: 'center',
+        // align: 'right',
+        verticalAlign: 'top',
+        // verticalAlign: 'middle',
+        borderWidth: 0
+      },
+      // end legend
+      series: seriesTemp,
+      // dataLabels: {
+      //     enabled: this.series.data.showDataLabels
+      // },
+      // for loop generates code of the form below dynamically!
+      // [
+      //   {
+      //     name: this.series.data[0].label,
+      //     data: this.series.data[0].values
+      //   },
+      //   etc. etc.
+      credits: {
+        enabled: false
+      } // end credits
+
+    }); // end Highcharts.chart
+  } // end mounted()
+  //   beforeDestroy: function() {
+  //     this.target.destroy();
+  //   },
+
+}); // end export default
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SankeyChart.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SankeyChart.vue?vue&type=script&lang=js& ***!
@@ -43023,6 +43296,45 @@ component.options.__file = "resources/js/components/LineChart2.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/LineChartWithDifferingDataLabels.vue":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/LineChartWithDifferingDataLabels.vue ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _LineChartWithDifferingDataLabels_vue_vue_type_template_id_8319e598___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LineChartWithDifferingDataLabels.vue?vue&type=template&id=8319e598& */ "./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=template&id=8319e598&");
+/* harmony import */ var _LineChartWithDifferingDataLabels_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LineChartWithDifferingDataLabels.vue?vue&type=script&lang=js& */ "./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _LineChartWithDifferingDataLabels_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _LineChartWithDifferingDataLabels_vue_vue_type_template_id_8319e598___WEBPACK_IMPORTED_MODULE_0__.render,
+  _LineChartWithDifferingDataLabels_vue_vue_type_template_id_8319e598___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/LineChartWithDifferingDataLabels.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/SankeyChart.vue":
 /*!*************************************************!*\
   !*** ./resources/js/components/SankeyChart.vue ***!
@@ -43552,6 +43864,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LineChartWithDifferingDataLabels_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./LineChartWithDifferingDataLabels.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LineChartWithDifferingDataLabels_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/SankeyChart.vue?vue&type=script&lang=js&":
 /*!**************************************************************************!*\
   !*** ./resources/js/components/SankeyChart.vue?vue&type=script&lang=js& ***!
@@ -43932,6 +44260,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LineChart2_vue_vue_type_template_id_d78e5c5a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LineChart2_vue_vue_type_template_id_d78e5c5a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./LineChart2.vue?vue&type=template&id=d78e5c5a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LineChart2.vue?vue&type=template&id=d78e5c5a&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=template&id=8319e598&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=template&id=8319e598& ***!
+  \*****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LineChartWithDifferingDataLabels_vue_vue_type_template_id_8319e598___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LineChartWithDifferingDataLabels_vue_vue_type_template_id_8319e598___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LineChartWithDifferingDataLabels_vue_vue_type_template_id_8319e598___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./LineChartWithDifferingDataLabels.vue?vue&type=template&id=8319e598& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=template&id=8319e598&");
 
 
 /***/ }),
@@ -44464,6 +44809,31 @@ render._withStripped = true
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LineChart2.vue?vue&type=template&id=d78e5c5a& ***!
   \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { style: _vm.styleObject, attrs: { id: "container" } })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=template&id=8319e598&":
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LineChartWithDifferingDataLabels.vue?vue&type=template&id=8319e598& ***!
+  \********************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -57830,46 +58200,52 @@ var __webpack_exports__ = {};
   !*** ./resources/js/app.js ***!
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var highcharts_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! highcharts-vue */ "./node_modules/highcharts-vue/dist/highcharts-vue.min.js");
 /* harmony import */ var highcharts_vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(highcharts_vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_LineChartWithDifferingDataLabels_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/LineChartWithDifferingDataLabels.vue */ "./resources/js/components/LineChartWithDifferingDataLabels.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue').default;
 
 
  // import Highcharts from 'highcharts'
 
+ // import LineChartWithDifferingDataLabels from './components/LineChartWithDifferingDataLabels.vue';
 
-vue__WEBPACK_IMPORTED_MODULE_1__.default.use((highcharts_vue__WEBPACK_IMPORTED_MODULE_0___default()));
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default); // Vue.component('line-chart', require('./components/LineChart.vue').default);
+ // Vue.component('line-chart-with-differing-data-labels', LineChartWithDifferingDataLabels);
 
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('basic-line-chart', __webpack_require__(/*! ./components/BasicLineChart.vue */ "./resources/js/components/BasicLineChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('line-chart2', __webpack_require__(/*! ./components/LineChart2.vue */ "./resources/js/components/LineChart2.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('column-chart', __webpack_require__(/*! ./components/ColumnChart.vue */ "./resources/js/components/ColumnChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('column-chart2', __webpack_require__(/*! ./components/ColumnChart2.vue */ "./resources/js/components/ColumnChart2.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('combo-chart', __webpack_require__(/*! ./components/ComboChart.vue */ "./resources/js/components/ComboChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('column-chart-for-currency', __webpack_require__(/*! ./components/ColumnChartForCurrency.vue */ "./resources/js/components/ColumnChartForCurrency.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('column-chart-for-percentages', __webpack_require__(/*! ./components/ColumnChartForPercentages.vue */ "./resources/js/components/ColumnChartForPercentages.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('column-chart-for-percentages2', __webpack_require__(/*! ./components/ColumnChartForPercentages2.vue */ "./resources/js/components/ColumnChartForPercentages2.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('stacked-column-chart', __webpack_require__(/*! ./components/StackedColumnChart.vue */ "./resources/js/components/StackedColumnChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('stacked-column-chart2', __webpack_require__(/*! ./components/StackedColumnChart2.vue */ "./resources/js/components/StackedColumnChart2.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('stacked-column-with-data-label-percents-chart', __webpack_require__(/*! ./components/StackedColumnWithPercentsAsDataLabelsChart.vue */ "./resources/js/components/StackedColumnWithPercentsAsDataLabelsChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('stacked-percentage-column-chart', __webpack_require__(/*! ./components/StackedPercentageColumnChart.vue */ "./resources/js/components/StackedPercentageColumnChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('stacked-percentage-column-chart2', __webpack_require__(/*! ./components/StackedPercentageColumnChart2.vue */ "./resources/js/components/StackedPercentageColumnChart2.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('sankey-chart', __webpack_require__(/*! ./components/SankeyChart.vue */ "./resources/js/components/SankeyChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('dept1-sankey-chart', __webpack_require__(/*! ./components/Dept1SankeyChart.vue */ "./resources/js/components/Dept1SankeyChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('dept2-sankey-chart', __webpack_require__(/*! ./components/Dept2SankeyChart.vue */ "./resources/js/components/Dept2SankeyChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('dept3-sankey-chart', __webpack_require__(/*! ./components/Dept3SankeyChart.vue */ "./resources/js/components/Dept3SankeyChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('dept4-sankey-chart', __webpack_require__(/*! ./components/Dept4SankeyChart.vue */ "./resources/js/components/Dept4SankeyChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('dept5-sankey-chart', __webpack_require__(/*! ./components/Dept5SankeyChart.vue */ "./resources/js/components/Dept5SankeyChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('dept6-sankey-chart', __webpack_require__(/*! ./components/Dept6SankeyChart.vue */ "./resources/js/components/Dept6SankeyChart.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('headcount-treemap', __webpack_require__(/*! ./components/HeadcountTreemap.vue */ "./resources/js/components/HeadcountTreemap.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('table-with-sparklines', __webpack_require__(/*! ./components/TableWithSparklines.vue */ "./resources/js/components/TableWithSparklines.vue").default); // Vue.component('treemap', require('./components/Treemap.vue').default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.use((highcharts_vue__WEBPACK_IMPORTED_MODULE_0___default()));
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default); // Vue.component('line-chart', require('./components/LineChart.vue').default);
+
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('basic-line-chart', __webpack_require__(/*! ./components/BasicLineChart.vue */ "./resources/js/components/BasicLineChart.vue").default); // Vue.component('line-chart-with-differing-data-labels', LineChartWithDifferingDataLabels);
+
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('line-chart-with-differing-data-labels', __webpack_require__(/*! ./components/LineChartWithDifferingDataLabels.vue */ "./resources/js/components/LineChartWithDifferingDataLabels.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('line-chart2', __webpack_require__(/*! ./components/LineChart2.vue */ "./resources/js/components/LineChart2.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('column-chart', __webpack_require__(/*! ./components/ColumnChart.vue */ "./resources/js/components/ColumnChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('column-chart2', __webpack_require__(/*! ./components/ColumnChart2.vue */ "./resources/js/components/ColumnChart2.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('combo-chart', __webpack_require__(/*! ./components/ComboChart.vue */ "./resources/js/components/ComboChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('column-chart-for-currency', __webpack_require__(/*! ./components/ColumnChartForCurrency.vue */ "./resources/js/components/ColumnChartForCurrency.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('column-chart-for-percentages', __webpack_require__(/*! ./components/ColumnChartForPercentages.vue */ "./resources/js/components/ColumnChartForPercentages.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('column-chart-for-percentages2', __webpack_require__(/*! ./components/ColumnChartForPercentages2.vue */ "./resources/js/components/ColumnChartForPercentages2.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('stacked-column-chart', __webpack_require__(/*! ./components/StackedColumnChart.vue */ "./resources/js/components/StackedColumnChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('stacked-column-chart2', __webpack_require__(/*! ./components/StackedColumnChart2.vue */ "./resources/js/components/StackedColumnChart2.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('stacked-column-with-data-label-percents-chart', __webpack_require__(/*! ./components/StackedColumnWithPercentsAsDataLabelsChart.vue */ "./resources/js/components/StackedColumnWithPercentsAsDataLabelsChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('stacked-percentage-column-chart', __webpack_require__(/*! ./components/StackedPercentageColumnChart.vue */ "./resources/js/components/StackedPercentageColumnChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('stacked-percentage-column-chart2', __webpack_require__(/*! ./components/StackedPercentageColumnChart2.vue */ "./resources/js/components/StackedPercentageColumnChart2.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('sankey-chart', __webpack_require__(/*! ./components/SankeyChart.vue */ "./resources/js/components/SankeyChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('dept1-sankey-chart', __webpack_require__(/*! ./components/Dept1SankeyChart.vue */ "./resources/js/components/Dept1SankeyChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('dept2-sankey-chart', __webpack_require__(/*! ./components/Dept2SankeyChart.vue */ "./resources/js/components/Dept2SankeyChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('dept3-sankey-chart', __webpack_require__(/*! ./components/Dept3SankeyChart.vue */ "./resources/js/components/Dept3SankeyChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('dept4-sankey-chart', __webpack_require__(/*! ./components/Dept4SankeyChart.vue */ "./resources/js/components/Dept4SankeyChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('dept5-sankey-chart', __webpack_require__(/*! ./components/Dept5SankeyChart.vue */ "./resources/js/components/Dept5SankeyChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('dept6-sankey-chart', __webpack_require__(/*! ./components/Dept6SankeyChart.vue */ "./resources/js/components/Dept6SankeyChart.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('headcount-treemap', __webpack_require__(/*! ./components/HeadcountTreemap.vue */ "./resources/js/components/HeadcountTreemap.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('table-with-sparklines', __webpack_require__(/*! ./components/TableWithSparklines.vue */ "./resources/js/components/TableWithSparklines.vue").default); // Vue.component('treemap', require('./components/Treemap.vue').default);
 // Vue.component('pie-chart', require('./components/PieChart.vue').default);
 // Vue.component('combo-chart', require('./components/ComboChart.vue').default);
 // Vue.component('stacked-column-chart', require('./components/hc-wrapper-versions/StackedColumnChart.vue').default);
 // Vue.component('chart-demo', require('./components/ChartDemo.vue').default);
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
+var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   el: '#app' // data() {
   //     return {
   //         chartOptions: {

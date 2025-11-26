@@ -5,11 +5,20 @@ import Vue from 'vue'
 // import Highcharts from 'highcharts'
 import HighchartsVue from 'highcharts-vue'
 
+// import LineChartWithDifferingDataLabels from './components/LineChartWithDifferingDataLabels.vue';
+import LineChartWithDifferingDataLabels from '@/components/LineChartWithDifferingDataLabels.vue';
+
+// Vue.component('line-chart-with-differing-data-labels', LineChartWithDifferingDataLabels);
+
+
 Vue.use(HighchartsVue)
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 // Vue.component('line-chart', require('./components/LineChart.vue').default);
 Vue.component('basic-line-chart', require('./components/BasicLineChart.vue').default);
+
+// Vue.component('line-chart-with-differing-data-labels', LineChartWithDifferingDataLabels);
+Vue.component('line-chart-with-differing-data-labels', require('./components/LineChartWithDifferingDataLabels.vue').default);
 Vue.component('line-chart2', require('./components/LineChart2.vue').default);
 Vue.component('column-chart', require('./components/ColumnChart.vue').default);
 Vue.component('column-chart2', require('./components/ColumnChart2.vue').default);

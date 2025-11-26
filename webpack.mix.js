@@ -11,6 +11,20 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+const path = require('path');
+
+ mix.js('resources/js/app.js', 'public/js')
     .vue();
     // .sass('resources/sass/app.scss', 'public/css');
+
+// mix.js('resources/js/app.js', 'public/js')
+//    .sass('resources/sass/app.scss', 'public/css');
+
+// Add this:
+mix.webpackConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'resources/js') // @ now points to /resources/js
+    }
+  }
+});

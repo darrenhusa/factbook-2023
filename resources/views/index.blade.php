@@ -23,6 +23,7 @@
         <ul>
             <!-- <li><a href="/section01-enrollment">Archived Misc charts</a></li> -->
             <li><a href="/historical_headcounts">Historical CCSJ Headcounts</a></li>
+            <li><a href="/test-chart">Historical CCSJ Headcounts with Different DataLabel Styles</a></li>
             <li><a href="/table-01">Table ?? - Total College</a></li>
             <li><a href="/table-02">Table ?? - Full-Time Undergraduates - First Majors - Traditional Programs</a></li>
             <li><a href="/table-03">Table ?? - Part-Time Undergraduates - First Majors - Traditional Programs</a></li>
