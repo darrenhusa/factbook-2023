@@ -4377,83 +4377,86 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
     };
   },
   // end data
+  methods: {
+    build_plot_parameters: function build_plot_parameters(myData) {
+      console.log('inside build_plot_parameters...');
+      var seriesTemp = [];
+      var number = this.series.data.length;
+
+      for (var i = 0; i < number; i++) {
+        var name = this.series.data[i].label;
+        var data = this.series.data[i].values;
+        var color = this.series.data[i].color;
+        var dataLabels = void 0;
+        var marker = void 0;
+        var series_obj = void 0; // choose between all data labels shown or last data label only formats
+
+        var all_points_format_enabled = this.series.data[i].showDataLabels; // var last_point_format_enabled = this.series.data[i].lastPoint;
+
+        if (all_points_format_enabled) {
+          dataLabels = {
+            enabled: true
+          };
+          marker = {
+            enabled: true
+          };
+          series_obj = {
+            name: name,
+            data: data,
+            color: color,
+            dataLabels: dataLabels,
+            marker: marker // Explicitly enable markers for all points
+
+          }; // end series_obj
+          // console.log(i, name, 'use all points format');
+        } // end if
+        else {
+          dataLabels = {
+            enabled: true,
+            formatter: function formatter() {
+              var lastIndex = number - 1;
+              return this.point.index === lastIndex ? this.y : null;
+            }
+          };
+          marker = {
+            enabled: false
+          };
+          series_obj = {
+            name: name,
+            data: data,
+            color: color,
+            dataLabels: dataLabels,
+            marker: marker // (optional) show a marker only on the last point
+
+          }; // end else
+        } // end else
+
+
+        seriesTemp.push(series_obj);
+        return seriesTemp;
+      } // end for
+
+    } // end build_plot_parameters()
+
+  },
+  // end methods
   mounted: function mounted() {
     // console.log(this.series);
     // console.log(this.series.title);
     // see https://stackoverflow.com/questions/50144557/how-to-add-data-to-chart-js-with-a-for-loop/50144700
-    var seriesTemp = [];
-    var number = this.series.data.length;
-
-    for (var i = 0; i < number; i++) {
-      var name = this.series.data[i].label;
-      var data = this.series.data[i].values;
-      var color = this.series.data[i].color; // choose between all data labels shown or last data label only formats
-
-      var all_points_format_enabled = this.series.data[i].showDataLabels; // var last_point_format_enabled = this.series.data[i].lastPoint;
-      // const all_points_format = {enabled: true,};
-      // const last_point_format = {
-      //   enabled: true,
-      //   formatter: function () {
-      //     const lastIndex = number - 1;
-      //     return this.point.index === lastIndex ? this.y : null;
-      //   },
-      // };
-
-      var dataLabels = void 0;
-      var marker = void 0;
-      var series_obj = void 0;
-
-      if (all_points_format_enabled) {
-        dataLabels = {
-          enabled: true
-        };
-        marker = {
-          enabled: true
-        };
-        series_obj = {
-          name: name,
-          data: data,
-          color: color,
-          dataLabels: dataLabels,
-          marker: marker // Explicitly enable markers for all points
-
-        }; // console.log(i, name, 'use all points format');
-      } else {
-        dataLabels = {
-          enabled: true,
-          formatter: function formatter() {
-            var lastIndex = number - 1;
-            return this.point.index === lastIndex ? this.y : null;
-          }
-        };
-        marker = {
-          enabled: false
-        };
-        series_obj = {
-          name: name,
-          data: data,
-          color: color,
-          dataLabels: dataLabels,
-          marker: marker // (optional) show a marker only on the last point
-
-        }; // console.log(i, name, 'use last point format');
-      } // console.log(name, data, color, all_points_format_enabled);;
-      // console.log(dataLabels);
-      // console.log('');
-      // console.log('');
-      // if ((all_points_format_enabled) & (!last_point_format_enabled)) {
-      //   dataLabels = all_points_format;
-      // }
-      // else {
-      //   dataLabels = last_point_format;
-      // }
-
-
-      seriesTemp.push(series_obj);
-    } // end for
+    var series_obj = build_plot_parameters(this.series.data); // console.log(i, name, 'use last point format');
+    // console.log(name, data, color, all_points_format_enabled);;
+    // console.log(dataLabels);
+    // console.log('');
+    // console.log('');
+    // if ((all_points_format_enabled) & (!last_point_format_enabled)) {
+    //   dataLabels = all_points_format;
+    // }
+    // else {
+    //   dataLabels = last_point_format;
+    // }
     // alert(seriesTemp);
     // console.log(seriesTemp);
-
 
     this.target = highcharts__WEBPACK_IMPORTED_MODULE_0___default().chart(this.$el, {
       // events: {

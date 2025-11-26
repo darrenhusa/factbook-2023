@@ -56,76 +56,83 @@ export default {
       }
     },  // end data
 
-    mounted : function() {
+    methods: {
+
+      build_plot_parameters(myData) {
+
+        console.log('inside build_plot_parameters...');
+
+        const seriesTemp = [];
+        const number = this.series.data.length;
+
+        for(let i = 0; i < number; i++) {
+          
+          let name = this.series.data[i].label;
+          let data = this.series.data[i].values;
+          let color = this.series.data[i].color;
+
+          let dataLabels;
+          let marker;
+          let series_obj;
+
+          // choose between all data labels shown or last data label only formats
+          let all_points_format_enabled = this.series.data[i].showDataLabels;
+          // var last_point_format_enabled = this.series.data[i].lastPoint;
+
+          if (all_points_format_enabled) {
+            dataLabels = { enabled: true, };
+            marker = { enabled: true, };
+
+            series_obj = {
+              name: name,
+              data: data,
+              color: color,
+              
+              dataLabels: dataLabels,
+              marker: marker, // Explicitly enable markers for all points
+          };  // end series_obj
+            
+            // console.log(i, name, 'use all points format');
+
+          } // end if
+          else {
+            dataLabels = {
+                enabled: true,
+                formatter: function () {
+                  const lastIndex = number - 1;
+                  return this.point.index === lastIndex ? this.y : null;
+                },
+              };
+            marker = { enabled: false };
+
+            series_obj = {
+              name: name,
+              data: data,
+              color: color,
+              
+              dataLabels: dataLabels,
+              marker: marker,  // (optional) show a marker only on the last point
+          }; // end else
+
+        } // end else
+
+        seriesTemp.push(series_obj);
+
+        return seriesTemp;
+      } // end for
+    }  // end build_plot_parameters()
+  }, // end methods
+
+    mounted() {
 
       // console.log(this.series);
       // console.log(this.series.title);
 
       // see https://stackoverflow.com/questions/50144557/how-to-add-data-to-chart-js-with-a-for-loop/50144700
-      const seriesTemp = [];
-      const number = this.series.data.length;
-
-      for(let i=0; i<number; i++){
+      
         
-        var name = this.series.data[i].label;
-        var data = this.series.data[i].values;
-        var color = this.series.data[i].color;
-        
-        // choose between all data labels shown or last data label only formats
-        var all_points_format_enabled = this.series.data[i].showDataLabels;
-        // var last_point_format_enabled = this.series.data[i].lastPoint;
-
-        // const all_points_format = {enabled: true,};
-        // const last_point_format = {
-        //   enabled: true,
-        //   formatter: function () {
-        //     const lastIndex = number - 1;
-        //     return this.point.index === lastIndex ? this.y : null;
-        //   },
-        // };
-
-        let dataLabels;
-        let marker;
-        let series_obj;
-
-        if (all_points_format_enabled) {
-          dataLabels = { enabled: true, };
-          marker = { enabled: true, };
-
-          series_obj = {
-            name: name,
-            data: data,
-            color: color,
-            
-            dataLabels: dataLabels,
-            marker: marker, // Explicitly enable markers for all points
-        };
-          
-          // console.log(i, name, 'use all points format');
-
-        }
-        else {
-          dataLabels = {
-              enabled: true,
-              formatter: function () {
-                const lastIndex = number - 1;
-                return this.point.index === lastIndex ? this.y : null;
-              },
-            };
-          marker = { enabled: false };
-
-          series_obj = {
-            name: name,
-            data: data,
-            color: color,
-            
-            dataLabels: dataLabels,
-            marker: marker,  // (optional) show a marker only on the last point
-        };
-          
+        let series_obj = build_plot_parameters(this.series.data);          
           // console.log(i, name, 'use last point format');
-
-        }
 
         // console.log(name, data, color, all_points_format_enabled);;
         // console.log(dataLabels);
@@ -138,9 +145,6 @@ export default {
         // else {
         //   dataLabels = last_point_format;
         // }
-
-        seriesTemp.push(series_obj);
-      } // end for
 
       // alert(seriesTemp);
       // console.log(seriesTemp);
