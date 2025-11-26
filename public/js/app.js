@@ -4328,6 +4328,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! highcharts/modules/exporting */ "./node_modules/highcharts/modules/exporting.js");
 /* harmony import */ var highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -4396,24 +4402,20 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
         var series_obj = void 0; // choose between all data labels shown or last data label only formats
 
         var all_points_format_enabled = myData[i].showDataLabels; // var last_point_format_enabled = this.series.data[i].lastPoint;
+        // step 1 of object build
+
+        series_obj = {
+          name: name,
+          data: data,
+          color: color
+        }; // end series_obj
+        // step 2 of object build
 
         if (all_points_format_enabled) {
           dataLabels = {
             enabled: true
-          }; // marker = { enabled: true, };
-
-          series_obj = {
-            name: name,
-            data: data,
-            color: color,
-            dataLabels: dataLabels // marker: marker, // Explicitly enable markers for all points
-
-          }; // end series_obj
-          // console.log(i, name, 'use all points format');
-        } // end if
-        else {
-          // index = myData.point.index;
-          // y = myData[i].y;
+          };
+        } else {
           dataLabels = {
             enabled: true,
             formatter: function formatter() {
@@ -4424,31 +4426,25 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
 
               return null; // Hide labels for other points
             }
-          }; // dataLabels = {
-          //     enabled: true,
-          //     formatter: function () {
-          //       const lastIndex = number - 1;
-          //       return index === lastIndex ? y : null;
-          //     },
-          //   };
-          // marker = { enabled: false };
-
-          series_obj = {
-            name: name,
-            data: data,
-            color: color,
-            dataLabels: dataLabels // marker: marker,  // (optional) show a marker only on the last point
-
-          }; // end else
+          }; // series_obj = {
+          //   name: name,
+          //   data: data,
+          //   color: color,
+          //   dataLabels: dataLabels,
+          // marker: marker,  // (optional) show a marker only on the last point
         } // end else
+        // using javscript spread operator to add datalabels property to series_obj
 
 
+        series_obj = _objectSpread(_objectSpread({}, series_obj), {}, {
+          dataLabels: dataLabels
+        });
         seriesTemp.push(series_obj);
       } // end for
 
 
       return seriesTemp;
-    } // end build_plot_parameters()
+    } // end function
 
   },
   // end methods

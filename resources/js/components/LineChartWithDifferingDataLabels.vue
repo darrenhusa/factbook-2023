@@ -84,63 +84,47 @@ export default {
           let all_points_format_enabled = myData[i].showDataLabels;
           // var last_point_format_enabled = this.series.data[i].lastPoint;
 
+          // step 1 of object build
+          series_obj = {
+              name: name,
+              data: data,
+              color: color,              
+          };  // end series_obj
+          
+          // step 2 of object build
           if (all_points_format_enabled) {
             dataLabels = { enabled: true, };
-            // marker = { enabled: true, };
-
-            series_obj = {
-              name: name,
-              data: data,
-              color: color,
-              
-              dataLabels: dataLabels,
-              // marker: marker, // Explicitly enable markers for all points
-          };  // end series_obj
-            
-            // console.log(i, name, 'use all points format');
-
-          } // end if
+          }
           else {
-            // index = myData.point.index;
-            // y = myData[i].y;
-          dataLabels = {
-            enabled: true,
-            formatter: function() {
-                // Check if this is the last point in the series
-                if (this.point === this.series.points[this.series.points.length - 1]) {
-                    return this.y; // Display the value for the last point
-                }
-                return null; // Hide labels for other points
-            }
-          };
-
-            // dataLabels = {
-            //     enabled: true,
-            //     formatter: function () {
-            //       const lastIndex = number - 1;
-            //       return index === lastIndex ? y : null;
-            //     },
-            //   };
-            // marker = { enabled: false };
-
-            series_obj = {
-              name: name,
-              data: data,
-              color: color,
+            dataLabels = {
+              enabled: true,
+              formatter: function() {
+                  // Check if this is the last point in the series
+                  if (this.point === this.series.points[this.series.points.length - 1]) {
+                      return this.y; // Display the value for the last point
+                  }
+                  return null; // Hide labels for other points
+              }
+            };
+            // series_obj = {
+            //   name: name,
+            //   data: data,
+            //   color: color,
               
-              dataLabels: dataLabels,
+            //   dataLabels: dataLabels,
               // marker: marker,  // (optional) show a marker only on the last point
-          }; // end else
+          } // end else
 
-        } // end else
+          // using javscript spread operator to add datalabels property to series_obj
+          series_obj = { ...series_obj, dataLabels: dataLabels};
 
-        seriesTemp.push(series_obj);
+          seriesTemp.push(series_obj);
 
-      } // end for
+        } // end for
 
-    return seriesTemp;
+        return seriesTemp;        
+      } // end function
 
-    }  // end build_plot_parameters()
   }, // end methods
 
     mounted() {
