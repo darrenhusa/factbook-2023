@@ -107,7 +107,7 @@ export default {
             enabled: true,
             formatter: function() {
                 // Check if this is the last point in the series
-                if (this.series.point === this.series.points[number - 1]) {
+                if (this.point === this.series.points[this.series.points.length - 1]) {
                     return this.y; // Display the value for the last point
                 }
                 return null; // Hide labels for other points

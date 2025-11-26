@@ -4418,7 +4418,7 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
             enabled: true,
             formatter: function formatter() {
               // Check if this is the last point in the series
-              if (this.series.point === this.series.points[number - 1]) {
+              if (this.point === this.series.points[this.series.points.length - 1]) {
                 return this.y; // Display the value for the last point
               }
 
