@@ -97,23 +97,25 @@
         </div> -->
         <dept-sankey-chart
             :series='@json($series)'
+            :chart-width="1200"
+            :chart-height="600"
         ></dept-sankey-chart>
         
         
         <h2>LONG FORM DEPT SANKEY CHARTS!!!!</h2>
-        <h3>Dept 2</h3>
+        <h3>Dept 2 - with science data</h3>
         <dept2-sankey-chart></dept2-sankey-chart>
         
-        <h3>Dept 3</h3>
+        <h3>Dept 3 - with business data</h3>
         <dept3-sankey-chart></dept3-sankey-chart>
         
-        <h3>Dept 4</h3>
+        <h3>Dept 4 - with education data</h3>
         <dept4-sankey-chart></dept4-sankey-chart>
 
-        <h3>Dept 5</h3>
+        <h3>Dept 5 - with humanities data</h3>
         <dept5-sankey-chart></dept5-sankey-chart>
 
-        <h3>Dept 6</h3>
+        <h3>Dept 6 - with criminal justice and public safety data</h3>
         <dept6-sankey-chart></dept6-sankey-chart>
     
     </div>

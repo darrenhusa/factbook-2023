@@ -1,5 +1,5 @@
 <template>
-    <div id="container"></div>
+    <div id="container" :style="styleObject"></div>
 </template>
 
 <script>
@@ -18,12 +18,25 @@ export default {
         type: Array,
         required: true,
       },
+      chartWidth: {
+        type: Number,
+        default: 300
+      },
+      chartHeight: {
+        type: Number,
+        default: 300
+      }
 
 	},
   	data() {
       return {
         // target: 'container'
-        target: undefined
+        target: undefined,
+        styleObject: {
+          width: this.chartWidth + 'px',
+          height: this.chartHeight + 'px',
+          border: '1px solid gray',
+        },
       }
     }, // end data()
 

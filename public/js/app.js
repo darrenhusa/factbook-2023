@@ -3719,12 +3719,25 @@ highcharts_modules_sankey__WEBPACK_IMPORTED_MODULE_2___default()((highcharts__WE
     series: {
       type: Array,
       required: true
+    },
+    chartWidth: {
+      type: Number,
+      "default": 300
+    },
+    chartHeight: {
+      type: Number,
+      "default": 300
     }
   },
   data: function data() {
     return {
       // target: 'container'
-      target: undefined
+      target: undefined,
+      styleObject: {
+        width: this.chartWidth + 'px',
+        height: this.chartHeight + 'px',
+        border: '1px solid gray'
+      }
     };
   },
   // end data()
@@ -44627,7 +44640,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "container" } })
+  return _c("div", { style: _vm.styleObject, attrs: { id: "container" } })
 }
 var staticRenderFns = []
 render._withStripped = true
