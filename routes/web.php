@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChartDataController;
 
 Route::get('/', function () {    
     return view('index');
@@ -23,19 +24,19 @@ Route::get('/', function () {
 //     return view('sparkline-demo');
 // });
 
-
+// Enrollment Routes
 Route::get('/historical_headcounts', function () {
     return view('enrollment.historical_headcounts');
 });
 
-Route::get('/test-chart', function () {
-    return view('enrollment.test-chart');
-});
+// Route::get('/test-chart', function () {
+//     return view('enrollment.test-chart');
+// });
 
 
-Route::get('/section01-enrollment', function () {
-    return view('enrollment.__section01-enrollment');
-});
+// Route::get('/section01-enrollment', function () {
+//     return view('enrollment.__section01-enrollment');
+// });
 
 Route::get('/table-01', function () {
     return view('enrollment.table-01');
@@ -53,9 +54,11 @@ Route::get('/table-04', function () {
     return view('enrollment.table-04');
 });
 
-Route::get('/catholic', function () {
-    return view('enrollment.catholic');
-});
+// Route::get('/catholic', function () {
+//     return view('enrollment.catholic');
+// });
+
+Route::get('/catholic', [ChartDataController::class, 'showData']);
 
 Route::get('/term_demographics', function () {
     return view('enrollment.term_demographics');
