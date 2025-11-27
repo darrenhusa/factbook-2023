@@ -100,10 +100,22 @@
         ></dept-sankey-chart>
         
         
-        <h2>LONG FORM SANKEY CHART!!!!</h2>
+        <h2>LONG FORM DEPT SANKEY CHARTS!!!!</h2>
+        <h3>Dept 2</h3>
         <dept2-sankey-chart></dept2-sankey-chart>
         
- 
+        <h3>Dept 3</h3>
+        <dept3-sankey-chart></dept3-sankey-chart>
+        
+        <h3>Dept 4</h3>
+        <dept4-sankey-chart></dept4-sankey-chart>
+
+        <h3>Dept 5</h3>
+        <dept5-sankey-chart></dept5-sankey-chart>
+
+        <h3>Dept 6</h3>
+        <dept6-sankey-chart></dept6-sankey-chart>
+    
     </div>
     <script src="/js/app.js"></script>
 </body>
