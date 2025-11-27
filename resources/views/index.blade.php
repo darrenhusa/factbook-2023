@@ -23,7 +23,8 @@
             <li><a href="/table-03">Table ?? - Part-Time Undergraduates - First Majors - Traditional Programs</a></li>
             <li><a href="/table-04">Table ?? - Graduate Students by Major</a></li>
             <li><a href="/term_demographics">Demographics</a></li>
-            <li><a href="/catholic">Catholic</a></li>
+            <li><a href="/catholic-numbers">Numbers of Catholic</a></li>
+            <li><a href="/catholic-percent">Percentage of Catholics</a></li>
         </ul>
             <li>Retention Rates</li>
         <ul>

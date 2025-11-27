@@ -1,5 +1,5 @@
 <template>
-    <div id="container" v-bind:style="styleObject"></div>
+    <div id="container" :style="styleObject"></div>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ import Exporting from 'highcharts/modules/exporting';
 Exporting(Highcharts);
 
 export default {
-    name : "ColumnChart",
+    name : "ColumnChartForPercentages2",
     props : {
       series : {
         // type: Array,
@@ -30,7 +30,7 @@ export default {
       // }
 	  },
   	
-    data : function() {
+    data() {
       return {
         // target: 'container'
         target: undefined,
@@ -41,8 +41,24 @@ export default {
         },
       }
     },
+
+    methods: {
+
+      // build_chart_y_label_format(this) {
+
+      //   if (this.series.y_value_chart_units == null) {
+      //     result = this.y;
+      //   }
+      //   else {
+      //     result = this.y + this.series.y_value_chart_units;
+      //   }
+
+      //   return result;
+      // }
+
+    },
     
-    mounted : function() {
+    mounted() {
       // console.log(this.series);
       // console.log(this.series.title);
 
@@ -100,14 +116,16 @@ export default {
                   enabled: true,
                   inside: false,
                 
-                  formatter: function () {
-                    return this.y + '%'; 
+                  formatter() {
+                    // return build_chart_y_label_format(this);
+                    return this.y; 
                 },
               },    
             },
         },
         series: seriesTemp,
-          legend: {
+        
+        legend: {
             enabled: true,
             layout: 'horizontal',
             align: 'center',

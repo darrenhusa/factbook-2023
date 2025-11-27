@@ -2596,7 +2596,7 @@ __webpack_require__.r(__webpack_exports__);
 
 highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts__WEBPACK_IMPORTED_MODULE_0___default()));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "ColumnChart",
+  name: "ColumnChartForPercentages2",
   props: {
     series: {
       // type: Array,
@@ -2626,6 +2626,16 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
         border: '1px solid gray'
       }
     };
+  },
+  methods: {// build_chart_y_label_format(this) {
+    //   if (this.series.y_value_chart_units == null) {
+    //     result = this.y;
+    //   }
+    //   else {
+    //     result = this.y + this.series.y_value_chart_units;
+    //   }
+    //   return result;
+    // }
   },
   mounted: function mounted() {
     // console.log(this.series);
@@ -2681,7 +2691,8 @@ highcharts_modules_exporting__WEBPACK_IMPORTED_MODULE_1___default()((highcharts_
             enabled: true,
             inside: false,
             formatter: function formatter() {
-              return this.y + '%';
+              // return build_chart_y_label_format(this);
+              return this.y;
             }
           }
         }

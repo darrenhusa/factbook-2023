@@ -58,7 +58,8 @@ Route::get('/table-04', function () {
 //     return view('enrollment.catholic');
 // });
 
-Route::get('/catholic', [ChartDataController::class, 'showData']);
+Route::get('/catholic-percent', [ChartDataController::class, 'showStackedPercentageColumnChartData']);
+Route::get('/catholic-numbers', [ChartDataController::class, 'showColumnChartData']);
 
 Route::get('/term_demographics', function () {
     return view('enrollment.term_demographics');
