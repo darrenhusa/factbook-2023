@@ -33,12 +33,12 @@ Vue.component('stacked-percentage-column-chart', require('./components/StackedPe
 Vue.component('stacked-percentage-column-chart2', require('./components/StackedPercentageColumnChart2.vue').default);
 
 Vue.component('sankey-chart', require('./components/SankeyChart.vue').default);
-Vue.component('dept1-sankey-chart', require('./components/Dept1SankeyChart.vue').default);
+Vue.component('dept-sankey-chart', require('./components/DeptSankeyChart.vue').default);
 Vue.component('dept2-sankey-chart', require('./components/Dept2SankeyChart.vue').default);
-Vue.component('dept3-sankey-chart', require('./components/Dept3SankeyChart.vue').default);
-Vue.component('dept4-sankey-chart', require('./components/Dept4SankeyChart.vue').default);
-Vue.component('dept5-sankey-chart', require('./components/Dept5SankeyChart.vue').default);
-Vue.component('dept6-sankey-chart', require('./components/Dept6SankeyChart.vue').default);
+// Vue.component('dept3-sankey-chart', require('./components/Dept3SankeyChart.vue').default);
+// Vue.component('dept4-sankey-chart', require('./components/Dept4SankeyChart.vue').default);
+// Vue.component('dept5-sankey-chart', require('./components/Dept5SankeyChart.vue').default);
+// Vue.component('dept6-sankey-chart', require('./components/Dept6SankeyChart.vue').default);
 Vue.component('headcount-treemap', require('./components/HeadcountTreemap.vue').default);
 Vue.component('table-with-sparklines', require('./components/TableWithSparklines.vue').default);
 // Vue.component('treemap', require('./components/Treemap.vue').default);

@@ -10,14 +10,8 @@
 <body>
     <h1>2025-2026 CCSJ Factbook</h1>
 
-    <!-- <div id="app"> -->
     <!-- <li><a href="/section01-practice">Section 01 Practice - Has Calculated Percentages in HTML table example</a></li> -->
-        <!-- <ul> -->
-                <!-- <li><a href="/sankey-chart"> Sankey Chart - Fall 2020 to Spring 2021 to Fall 2021 TRAD Retention in Majors</a></li> -->
-                <!-- <li><a href="/sankey-dept1"> Sankey Charts - Retention by Academic Department</a></li> -->
-                <!-- <li><a href="/sankey-demo"> Highcharts Sankey Demo</a></li> -->
-            <!-- </ul> -->
-    
+        
     <ul>
         <li>Enrollment</li>
         <ul>
@@ -50,10 +44,13 @@
             <li><a href="/6yr_comp">6 Year Graduation Rate Comparisons</a></li>
         </ul>
 
+        <li>Sankey Charts</li>
+            <ul>
+                <li><a href="/dept-sankey-chart">Dept Sankey Chart</a></li>
+            </ul>
+
     </ul>
-    
-    <!-- </div> -->
-    
+        
     <script src="/js/app.js"></script>
 </body>
 </html>

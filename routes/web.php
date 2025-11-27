@@ -103,9 +103,14 @@ Route::get('/6yr_comp', function () {
     return view('graduation_rates.six_year_comparisons');
 });
 
-// Route::get('/sankey-chart', function () {    
-//     return view('sankey_charts.sankey-chart');
+Route::get('/dept-sankey-chart', function () {    
+    return view('sankey_charts.dept-sankey-chart');
+});
+
+// Route::get('/dept2-sankey-chart', function () {    
+//     return view('sankey_charts.dept2-sankey-chart');
 // });
+
 
 // Route::get('/sankey-demo', function () {    
 //     return view('sankey-demo');

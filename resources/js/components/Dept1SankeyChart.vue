@@ -70,42 +70,7 @@ export default {
         keys: ['from', 'to', 'weight'],
         data: [
           //part 1
-          ['General Studies', 'General Studies2', 17],
-          ['General Studies', 'Changed Programs2', 8],
-          ['General Studies', 'Earned Bachelors2', 2],
-          ['General Studies', 'Stop-out2', 13],
           
-          //part 2
-          ['General Studies2', 'General Studies3', 7],
-          ['Stop-out2', 'General Studies3', 1],
-          ['General Studies2', 'Changed Programs3', 11],
-          ['General Studies2', 'Earned Bachelors3', 3],
-          ['General Studies2', 'Stop-out3', 18],
-          
-          //part 1
-          ['Human Services', 'Human Services2', 11],
-          ['Human Services', 'Changed Programs2', 3],
-          ['Human Services', 'Earned Bachelors2', 1],
-          ['Human Services', 'Stop-out2', 4],
-          
-          //part 2
-          ['Human Services2', 'Human Services3', 7],
-          ['Human Services2', 'Changed Programs3', 3],
-          ['Human Services2', 'Earned Bachelors3', 2],
-          ['Human Services2', 'Stop-out3', 7],
-          
-          //part 1
-          ['Psychology', 'Psychology2', 27],
-          ['Psychology', 'Changed Programs2', 5],
-          ['Psychology', 'Earned Bachelors2', 1],
-          ['Psychology', 'Stop-out2', 3],
-
-          //part 2
-          ['Psychology2', 'Psychology3', 19],
-          ['Stop-out2', 'Psychology3', 0],
-          ['Psychology2', 'Changed Programs3', 5],
-          ['Psychology2', 'Earned Bachelors3', 2],
-          ['Psychology2', 'Stop-out3', 10],
 
         ],
   nodes: [{
