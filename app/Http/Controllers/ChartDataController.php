@@ -10,14 +10,6 @@ class ChartDataController extends Controller
     public function showData()
     {
         
-        // $myArray = ['item1', 'item2'];
-        // $myObject = (object) ['property' => 'value'];
-
-        // return view('my_template', [
-        //     'dataArray' => $myArray,
-        //     'dataObject' => $myObject,
-        // ]);
-
         // specify data
         $catholic = ['label' => 'Catholic', 'values' => [174, 162, 105, 73, 47]];
     
